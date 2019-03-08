@@ -1,20 +1,35 @@
 "use strict";
 const results = {
   templateUrl: `app/components/results/results.html`,
-  controller: ['MapService', function (MapService) {
+  controller: ['$scope', function ($scope) {
     const vm = this;
-    vm.map;
-    MapService.campSearch().then((data) => {
-      vm.jsonPayload = data;
-      return vm.jsonPayload;
+    $scope.mapOptions = {
+      zoom: 14,
+      center: new google.maps.LatLng(42.3314, -83.0458),
+      // mapTypeId: google.maps.MapTypeId.STREET
+    }
 
-    });
-    vm.initMap = function() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
+    $scope.map = new google.maps.Map(document.getElementById('map'), $scope.mapOptions);
+
+    var cities = "Atlanta, USA";
+    var geocoder = new google.maps.Geocoder();
+
+    $scope.markers = [];
+
+    var createMarker = function (info) {
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        position: new google.maps.LatLng(info.lat(), info.lng())
+      });
+    }
+
+    geocoder.geocode({ 'address': cities }, function (results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        newAddress = results[0].geometry.location;
+        $scope.map.setCenter(newAddress);
+        createMarker(newAddress)
       }
+    });
   }]
 };
 
