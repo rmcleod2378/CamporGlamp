@@ -5,8 +5,9 @@ const results = {
     const vm = this;
     vm.map;
     MapService.campSearch().then((data) => {
-      self.jsonPayload = data;
-      return self.jsonPayload;
+      vm.jsonPayload = data;
+      return vm.jsonPayload;
+
     });
     vm.initMap = function() {
         map = new google.maps.Map(document.getElementById('map'), {
