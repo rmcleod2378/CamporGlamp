@@ -1,0 +1,5 @@
+{
+"name": "camp-or-glamp",
+"description": "campground searching app. Using NPS and Google APIs",
+"image": "heroku/nodejs"
+}
