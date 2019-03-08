@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.use(express.static("./app"));
+app.use(express.static("./camporglamp"));
 app.use(express.json());
 
 const port = process.env.PORT || 8080; 
