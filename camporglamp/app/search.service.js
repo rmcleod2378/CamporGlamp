@@ -1,11 +1,11 @@
 "use strict";
 function SearchService($http) {
     const self = this;
-    const key = "4r55zv6cbm6x33434vxwm479"
+    const key = "OP2F1MT0eeFGORzUkOdqULyY1Ed9dB9hdDiFIlD8"
     self.get = function() {
         return $http({
             method:'GET',
-            url:`http://api.amp.active.com/camping/campgrounds/?landmarkLat=42&landmarkLong=-83&landmarkName=true&api_key=${key}`
+            url:`https://api.nps.gov/api/v1/campgrounds?stateCode=MI&limit=5&api_key=${key}`
         });
     };
 

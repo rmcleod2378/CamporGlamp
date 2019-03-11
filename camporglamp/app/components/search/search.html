@@ -1,1 +1,9 @@
 <button ng-click="$ctrl.campSearch()">SEARCH</button>
+<section ng-repeat="sites in $ctrl.campresults"></section>
+    <p>{{sites.name}}</p>
+    <p>{{sites.latLong}}</p>
+    <p>{{sites.directionsOverview}}</p>
+    <p>{{sites.description}}</p>
+</section>
+
+<results></results>
