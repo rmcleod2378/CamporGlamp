@@ -5,6 +5,9 @@ const results = {
     const vm = this;
     vm.results = SearchService.getData()
     vm.campresults = vm.results;
+    vm.siteCoord = SearchService.createCoord();
+
+    // vm.siteCoord(vm.results);
 
     vm.initMap = function () {
       vm.map = new google.maps.Map(document.getElementById('map'), {
