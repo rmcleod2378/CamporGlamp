@@ -1,2 +1,8 @@
-<p>hello</p>
+<section ng-repeat="sites in $ctrl.campresults">
+  <p>{{sites.name}}</p>
+  <p>{{sites.latLong}}</p>
+  <p>{{sites.directionsOverview}}</p>
+  <p>{{sites.description}}</p>
+</section>
+
 <div id="map"></div>
