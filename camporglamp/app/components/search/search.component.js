@@ -7,7 +7,6 @@ const search = {
             SearchService.get().then(function(response) {
                 vm.campresults = response.data.data;
                 console.log(vm.campresults);
-                $location.path("/results")
             });
         };
     }]
