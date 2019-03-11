@@ -3,13 +3,16 @@ const results = {
   templateUrl: `app/components/results/results.html`,
   controller: ['$scope', function ($scope) {
     const vm = this;
-    $scope.mapOptions = {
-      zoom: 14,
-      center: new google.maps.LatLng(42.3314, -83.0458),
-      // mapTypeId: google.maps.MapTypeId.STREET
-    }
 
-    $scope.map = new google.maps.Map(document.getElementById('map'), $scope.mapOptions);
+    vm.map;
+    vm.initMap = function () {
+      vm.map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: 12, lng: -12 },
+        zoom: 12
+      })
+    };
+
+    vm.initMap();
 
     var cities = "Atlanta, USA";
     var geocoder = new google.maps.Geocoder();
