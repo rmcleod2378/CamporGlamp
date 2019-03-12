@@ -1,4 +1,42 @@
-#map {
-  height:420px;
-  width:100%;
+.results {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
  }
+
+ .campsites {
+   border-radius: 5px;
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+   padding: 0 10px;
+   margin: 5px 0;
+   width: 90%;
+ }
+
+ #map {
+   height: 100vh;
+   width: 100%;
+   display:flex;
+ }
+
+.fixedRight, .fixedLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 10px;
+  font-size: 30px;
+  border-radius: 50%;
+  color:#ddd;
+  background:green;
+  box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.75);
+  padding:15px;
+}
+
+ .fixedRight {
+  right: 15px; 
+}
+
+.fixedLeft {
+  left:15px;
+}

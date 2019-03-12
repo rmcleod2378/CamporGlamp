@@ -1,17 +1,48 @@
 body {
-  margin:0;
+  margin: 0;
 }
 
 /* iPads ----------- */
+
 @media only screen and (min-width: 768px) {
-
-
-
+  .results {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .campsites {
+    margin: 5px 5px;
+    width: 45%;
+    height: 300px;
+  }
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {
 
-
-  
+@media only screen and (min-width: 1224px) {
+  results {
+    display: flex;
+  }
+  .results {
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 66%;
+  }
+  .campsites {
+    margin: 5px 5px;
+    width: 30%;
+    height: 300px;
+  }
+  #map {
+    width: 33%;
+    height: 100vh;
+    display: flex;
+  }
+  .fixedRight, .fixedLeft {
+    display: none;
+  }
 }
