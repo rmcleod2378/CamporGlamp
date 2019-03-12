@@ -7,7 +7,7 @@ const search = {
         //this method is a PROPERTY of our search controller. Onclick (in HTML) it calls the GET from our service.
         vm.campSearch = function () {
             //our service get method
-            SearchService.get();
+            SearchService.get(vm.state);
         };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;
