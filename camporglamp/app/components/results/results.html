@@ -1,10 +1,14 @@
-<section ng-repeat="sites in $ctrl.campresults">
-  <p>{{sites.name}}</p>
-  <p>{{sites.latLong}}</p>
-  <p>{{sites.directionsOverview}}</p>
-  <p>{{sites.description}}</p>
-  <a href="/camporglamp/app/components/details/details.html">Learn More</a>
-  <hr>
-</section>
+
+<div class="results">
+  <section ng-repeat="sites in $ctrl.campresults" class="campsites">
+    <p>{{sites.name}}</p>
+    <p>{{sites.latLong}}</p>
+    <p>{{sites.directionsOverview}}</p>
+    <p>{{sites.description}}</p>
+  </section>
+</div>
 
 <div id="map"></div>
+
+<i class="fixedRight fas fa-map-marked-alt"></i>
+<i class="fixedLeft fas fa-list-ul"></i>
