@@ -1,9 +1,13 @@
 "use strict";
 function SearchService($http, $location) {
+    // our NPS API key
   const key = "OP2F1MT0eeFGORzUkOdqULyY1Ed9dB9hdDiFIlD8";
   const self = this;
+  //variable storing our promise
   self.campresults = null;
+  //variable storing our objects
   self.siteCoord = null;
+  //get method, called onclick in our search.html
   self.get = function() {
     return $http({
       method: "GET",
@@ -14,9 +18,12 @@ function SearchService($http, $location) {
       return self.campresults;
     });
   };
+  //this is called in results component
   self.getData = () => {
     return self.campresults;
   };
+  //this method is called in our results component, it takes the latlong string from each object in our
+  //promise. 
   self.createCoord = function() {
     self.siteCoord = [];
     for (let i = 0; i < self.campresults.length; i++) {
