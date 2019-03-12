@@ -3,18 +3,22 @@ function SearchService($http, $location) {
     // our NPS API key
   const key = "OP2F1MT0eeFGORzUkOdqULyY1Ed9dB9hdDiFIlD8";
   const self = this;
+  self.state;
+  self.parkcode;
   //variable storing our promise
   self.campresults = null;
   //variable storing our objects
   self.siteCoord = null;
   //get method, called onclick in our search.html
-  self.get = function() {
+  self.get = (state) => {
+    self.state = state;
     return $http({
       method: "GET",
-      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=MI&limit=5&api_key=${key}`
+      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=${state}&limit=15&api_key=${key}`
     }).then(function(response) {
       self.campresults = response.data.data;
       $location.path("/results");
+      console.log(self.campresults);
       return self.campresults;
     });
   };
@@ -22,17 +26,33 @@ function SearchService($http, $location) {
   self.getData = () => {
     return self.campresults;
   };
+  self.getAlerts = (parkcode) => {
+    return $http({
+      method: "GET",
+      url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkcode}&api_key=${key}`
+    }).then(function(response) {
+      self.alertresults = response.data.data;
+      $location.path("/details");
+      console.log(self.alertresults);
+      return self.alertresults;
+    });
+  }
   //this method is called in our results component, it takes the latlong string from each object in our
   //promise. 
-  self.createCoord = function() {
+  self.createCoord = () => {
     self.siteCoord = [];
     for (let i = 0; i < self.campresults.length; i++) {
+      if (!self.campresults[i].latLong) {
+        self.campresults[i].latLong = "null, null";
+      }
       self.latlong = self.campresults[i].latLong;
       self.split = self.latlong.split(" ");
-      // console.log(self.split);
+      console.log(self.split);
       for (let j = 0; j < 1; j++) {
-        self.str1 = self.split[j].substr(5, 8);
-        self.str2 = self.split[j + 1].substr(4, 8);
+        self.len1 = self.split[j].length;
+        self.len2 = self.split[j + 1].length;
+        self.str1 = self.split[j].substr(5, self.len1);
+        self.str2 = self.split[j + 1].substr(4, self.len2);
         self.num1 = parseFloat(self.str1);
         self.num2 = parseFloat(self.str2);
         self.coordinates = {

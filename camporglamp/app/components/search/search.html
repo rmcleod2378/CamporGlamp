@@ -1,2 +1,6 @@
-<button ng-click="$ctrl.campSearch()">SEARCH</button>
+<form ng-submit="$ctrl.campSearch($ctrl.state)">
+    <input ng-model="$ctrl.state" type="text" placeholder="Enter a state (ex Michigan)">
+    <button>Let's Go!</button>
+</form>
+
 <!-- On click, we run our get method -->

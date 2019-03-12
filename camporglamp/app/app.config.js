@@ -11,4 +11,7 @@ angular.module("App").config(["$routeProvider", function($routeProvider) {
     .when("/results", {
       template:'<results></results>',
     })
+    .when("/details", {
+        template:'<details></details>'
+    })
 }]);
