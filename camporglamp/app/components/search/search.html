@@ -5,20 +5,28 @@
 
 <section class="split top left">
   <div class="centered">
-    <p class="title camp" ng-click="$ctrl.campSearch()">Camp</p>
-    <input expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
-    <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+    <form ng-submit="$ctrl.campSearch($ctrl.state)">
+        <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
+        <input ng-model="$ctrl.state" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
+        <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+    </form>
   </div>
 </section>
 
 <p class="or">~OR~</p>
-<input expand class="mobile_input" type="text" placeholder="Start Here: Enter State" ng-focus="">
+<form ng-submit="$ctrl.campSearch($ctrl.state)">
+        <input ng-model="$ctrl.state" expand class="mobile_input" type="text" placeholder="Start Here: Enter State" ng-focus="">
+</form>
+
 
 <section class="split bottom right">
   <div class="centered" >
-    <p ng-click="$ctrl.campSearch()" class="title glamp">Glamp</p>
-    <input expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
-    <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+    <form >
+        <p ng-click="$ctrl.campSearch($ctrl.state)" class="title glamp">Glamp</p>
+        <input ng-model="$ctrl.state" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
+        <button class="search" ng-click="$ctrl.campSearch($ctrl.state)">SEARCH</button>
+    </form>
+
   </div>
 </section>
 
