@@ -1,6 +1,177 @@
+/* Optional: Makes the sample page fill the window. */
+html,
 body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+}
+
+.split {
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  /* padding-top: 20px; */
+}
+
+/* Control the left side */
+.top {
+  top: 0;
+  background-image: url(../styles/Images/camping1.jpg);
+  background-position: center;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Control the right side */
+.bottom {
+  bottom: 0; 
+  background-image: url(../styles/Images/Glamping1.jpg);
+  background-position: center;
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.title {
+  font-size: 8em;
+  color: antiquewhite;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+
+.title:hover {
+  background-color: rgba(8, 73, 8, 0.7);
+  border-radius: 33%;
+  border: 1px solid green;
+}
+
+.camp {
+  font-family: 'Josefin Slab', serif;
+  text-shadow: 3px 0 0 rgb(142, 92, 35), 5px 0 0 #b3400b;
+}
+.glamp {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #A57164;
+  text-shadow: 1px 1px 0 antiquewhite, 4px 4px 0 #8e2723;
+}
+
+.desktop_input1, .desktop_input2 {
+  display: none;
+}
+
+.mobile_input, .desktop_input1, .desktop_input2 {
+  font-family: 'Raleway', sans-serif;
+  cursor: text;
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.mobile_input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+input::placeholder {
+  color: #A57164;
+  font-weight: bold;
+}
+
+.search {
+  display: none;
+  background-color: rgb(33, 189, 33);
+  color: antiquewhite;
+  border-radius: 4px;
+  border-style: none;
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+}
+
+.or {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: antiquewhite;
+  text-shadow: 3px 0 0 #8e5c23, 5px 0 0 #b3400b;
+  font-size: 2em;
+  z-index: 200;
+}
+
+.footer_btn, .footer_clear {
+    position: fixed;
+    bottom: 0px;
+    right: 0px; 
+    background-color: white;
+    color: black;
+    border: 1px solid red;
+    border-radius: 4px;
+    z-index: 200;
+    padding: 5px;
+    margin: 10px 0 0 10px;
+    cursor: pointer;
+    display: inline-flex;
+    text-align: center;
+}
+
+.contact, .public {
   margin: 0;
 }
+
+.contact {
+  padding-left: 5px;
+}
+
+.material-icons.md-18 { 
+  font-size: 18px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;   /* Footer height */
+  z-index: 2;
+  /* border: 1px solid blue; */
+  background-color: antiquewhite;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer_txt {
+  color: black;
+}
+
+
+/* Style the image inside the centered container, if needed */
+/* .centered img {
+  width: 150px;
+  border-radius: 50%;
+} */
 
 /* iPads ----------- */
 
@@ -18,9 +189,47 @@ body {
   }
 }
 
-/* Desktops and laptops ----------- */
+@media (hover: none) {
+  .title:hover {
+    background-color: none;
+    border-radius: none;
+    border: none;
+  }
+}
 
-@media only screen and (min-width: 1224px) {
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+
+  .split {
+    top: 0; 
+    height: 100%;
+    width: 50%;
+  }
+
+  .left {
+    left: 0;
+  }
+
+  .right {
+    right: 0;    
+  }
+
+  .or {
+    display: block;
+  }
+
+  .mobile_input {
+    display: none;
+  }
+
+  .desktop_input1, .desktop_input2 {
+    display: block;
+  }
+  
+  .search {
+    display: block;
+  }
+
   results {
     display: flex;
   }
@@ -45,4 +254,3 @@ body {
   .fixedRight, .fixedLeft {
     display: none;
   }
-}

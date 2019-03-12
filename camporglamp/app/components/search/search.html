@@ -1,2 +1,40 @@
-<input type="text">
-<button ng-click="$ctrl.campSearch()">SEARCH</button>
+<!-- <form ng-submit="$ctrl.campSearch($ctrl.state)">
+        <input ng-model="$ctrl.state" type="text" placeholder="Enter a state (ex Michigan)">
+        <button>Let's Go!</button>
+</form> -->
+
+<section class="split top left">
+  <div class="centered">
+    <p class="title camp" ng-click="$ctrl.campSearch()">Camp</p>
+    <input expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
+    <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+  </div>
+</section>
+
+<p class="or">~OR~</p>
+<input expand class="mobile_input" type="text" placeholder="Start Here: Enter State" ng-focus="">
+
+<section class="split bottom right">
+  <div class="centered" >
+    <p ng-click="$ctrl.campSearch()" class="title glamp">Glamp</p>
+    <input expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
+    <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+  </div>
+</section>
+
+<button ng-click="$ctrl.show()" class="footer_btn">
+  <p class="public"><i class="material-icons md-18">public</i></p>
+  <p class="contact">Contact Us, Terms, & more</p>
+</button>
+
+<button class="footer_clear" ng-click="$ctrl.showFooter = false">Close <i class="material-icons">clear</i>
+</button>
+
+<div ng-show="$ctrl.showFooter" class="footer_container">
+  <footer id="footer">
+    <p class="footer_txt">About Us</p>
+    <p class="footer_txt">Data provided by the National Parks Service</p>
+    <p class="footer_txt">Maps provided by Google</p>
+  </footer>
+</div>
+
