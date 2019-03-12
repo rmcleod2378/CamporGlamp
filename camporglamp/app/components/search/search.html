@@ -1,10 +1,7 @@
-<!-- <button ng-click="$ctrl.campSearch()">SEARCH</button>
-
-<section ng-repeat="post in $ctrl.goog track by $index">
-  <p>Name: {{ post.name }}</p>
-  <p>Rating: {{ post.rating }}</p>
-  <p>Place_ID: {{ post.place_id }}</p>
-</section> -->
+<form ng-submit="$ctrl.campSearch($ctrl.state)">
+        <input ng-model="$ctrl.state" type="text" placeholder="Enter a state (ex Michigan)">
+        <button>Let's Go!</button>
+</form>
 
 
 <section class="split top left">
