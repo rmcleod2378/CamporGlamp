@@ -1,12 +1,13 @@
 "use strict";
 const details = {
-    templateUrl:'app/components/details/details.html',
+    templateUrl:"app/components/details/details.html",
     controller: ["SearchService", function(SearchService) {
         const vm = self;
-
-        vm.alertGet = function() {
-            SearchService.getAlerts(parkcode);
-        }
+        vm.campSite = SearchService.getCamp();
+        console.log(vm.campSite)
+        // vm.alertGet = function(parkCode){
+        //     SearchService.getAlerts(parkCode);
+        // }
     }]
 }
 
