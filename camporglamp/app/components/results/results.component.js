@@ -20,7 +20,9 @@ const results = {
           });
         }
       };
-
+      vm.getDetails = function(site) {
+        SearchService.setCamp(site);
+      }
         
 
       vm.initMap();

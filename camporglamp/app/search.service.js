@@ -10,6 +10,9 @@ function SearchService($http, $location) {
   //variable storing our objects
   self.siteCoord = null;
   //get method, called onclick in our search.html
+
+  self.campSite = null;
+
   self.get = (state) => {
     self.state = state;
     return $http({
@@ -26,17 +29,25 @@ function SearchService($http, $location) {
   self.getData = () => {
     return self.campresults;
   };
-  self.getAlerts = (parkcode) => {
-    return $http({
-      method: "GET",
-      url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkcode}&api_key=${key}`
-    }).then(function(response) {
-      self.alertresults = response.data.data;
-      $location.path("/details");
-      console.log(self.alertresults);
-      return self.alertresults;
-    });
+
+  self.setCamp = (site) => {
+    self.campSite = site;
+    $location.path("/details");
   }
+  self.getCamp = () => {
+      return self.campSite;
+  }
+
+  // self.getAlerts = (parkcode) => {
+  //   return $http({
+  //     method: "GET",
+  //     url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkcode}&api_key=${key}`
+  //   }).then(function(response) {
+  //     self.alertresults = response.data.data;
+  //     console.log(self.alertresults);
+  //     return self.alertresults;
+  //   });
+  // }
   //this method is called in our results component, it takes the latlong string from each object in our
   //promise. 
   self.createCoord = () => {
@@ -47,7 +58,7 @@ function SearchService($http, $location) {
       }
       self.latlong = self.campresults[i].latLong;
       self.split = self.latlong.split(" ");
-      console.log(self.split);
+      // console.log(self.split);
       for (let j = 0; j < 1; j++) {
         self.len1 = self.split[j].length;
         self.len2 = self.split[j + 1].length;
@@ -62,7 +73,7 @@ function SearchService($http, $location) {
         self.siteCoord.push(angular.copy(self.coordinates));
       }
     }
-    console.log(self.siteCoord);
+    // console.log(self.siteCoord);
     return self.siteCoord;
   };
 }
