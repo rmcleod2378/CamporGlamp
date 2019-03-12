@@ -6,10 +6,11 @@
 
 <section class="split top left">
   <div class="centered">
-    <form ng-submit="$ctrl.campSearch($ctrl.state)"></form>
-    <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
-    <input ng-model="$ctrl.state" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
-    <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+    <form ng-submit="$ctrl.campSearch($ctrl.state)">
+        <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
+        <input ng-model="$ctrl.state" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
+        <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+    </form>
   </div>
 </section>
 
