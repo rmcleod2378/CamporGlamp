@@ -32,7 +32,7 @@ function SearchService($http, $location) {
 
   self.setCamp = (site) => {
     self.campSite = site;
-    $location.path("/details");
+    $location.path("/camp-details");
   }
   self.getCamp = () => {
       return self.campSite;

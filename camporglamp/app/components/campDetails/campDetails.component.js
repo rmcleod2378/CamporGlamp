@@ -1,8 +1,8 @@
 "use strict";
-const details = {
-    templateUrl:"app/components/details/details.html",
+const campDetails = {
+    templateUrl:`app/components/campDetails/campDetails.html`,
     controller: ["SearchService", function(SearchService) {
-        const vm = self;
+        const vm = this;
         vm.campSite = SearchService.getCamp();
         console.log(vm.campSite)
         // vm.alertGet = function(parkCode){
@@ -13,4 +13,4 @@ const details = {
 
 
 
-angular.module("App").component("details", details);
+angular.module("App").component("campDetails", campDetails);
