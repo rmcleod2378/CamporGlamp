@@ -51,6 +51,18 @@ function SearchService($http, $location) {
     return self.alertresults;
   }
 
+  self.getGlamp = (state) => {
+    return $http({
+      method: "GET",
+      url: `/glamp/${state}`   
+    }).then(function(response) {
+      self.campresults = response;
+      $location.path("/results");
+      console.log(self.campresults);
+      return self.campresults;
+    })
+  };
+
   // self.setAlerts = (parkcode) => {
     
   // }

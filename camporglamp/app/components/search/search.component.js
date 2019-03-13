@@ -12,6 +12,11 @@ const search = {
             //our service get method
             SearchService.get(vm.state);
         };
+        vm.glampSearch = function () {
+            //our service get method
+            console.log("hi")
+            SearchService.getGlamp(vm.state);
+        };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;
             vm.footerBtn = !vm.footerBtn;

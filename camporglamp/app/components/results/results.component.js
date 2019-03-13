@@ -5,8 +5,8 @@ const results = {
     "SearchService",
     function(SearchService) {
       const vm = this;
-      const scripts = document.querySelectorAll("script")
-      console.log(scripts)
+      // const scripts = document.querySelectorAll("script")
+      // console.log(scripts)
       vm.campresults = SearchService.getData();
       vm.siteCoord = SearchService.createCoord();
       vm.initMap = function() {
