@@ -5,9 +5,9 @@ const campDetails = {
         const vm = this;
         vm.campSite = SearchService.getCamp();
         console.log(vm.campSite)
-        // vm.alertGet = function(parkCode){
-        //     SearchService.getAlerts(parkCode);
-        // }
+        vm.alert = SearchService.getAlerts();
+        console.log(vm.alert)
+
     }]
 }
 
