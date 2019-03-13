@@ -1,10 +1,14 @@
 <p>HELLO FROM CAMPDETAILS</p>
 
 
-<section ng-repeat="site in $ctrl.campSite">
-  <p>{{site.name}}</p>
 
-</section>
+  <p>{{$ctrl.campSite.name}}</p>
+  <p>{{$ctrl.campSite.description}}</p>
+  <p>{{$ctrl.campSite.weatherOverview}}</p>
+  <p>{{$ctrl.campSite.directionsOverview}}</p>
+  <hr>
+  <p>{{$ctrl.alert.title}}</p>
+
 
 
 <!-- <section ng-repeat="alert in $ctrl.alerts">

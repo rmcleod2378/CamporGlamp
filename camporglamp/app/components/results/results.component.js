@@ -5,6 +5,8 @@ const results = {
     "SearchService",
     function(SearchService) {
       const vm = this;
+      const scripts = document.querySelectorAll("script")
+      console.log(scripts)
       vm.campresults = SearchService.getData();
       vm.siteCoord = SearchService.createCoord();
       vm.initMap = function() {
@@ -29,6 +31,7 @@ const results = {
       vm.getDetails = function(site) {
         console.log(site)
         SearchService.setCamp(site);
+        // SearchService.setAlerts(site.parkCode);
       }
       vm.initMap();
     }

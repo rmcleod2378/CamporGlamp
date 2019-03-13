@@ -12,6 +12,7 @@ function SearchService($http, $location) {
   //get method, called onclick in our search.html
 
   self.campSite = null;
+  self.alertresults = null;
 
   self.get = (state) => {
     self.state = state;
@@ -32,22 +33,28 @@ function SearchService($http, $location) {
 
   self.setCamp = (site) => {
     self.campSite = site;
-    $location.path("/camp-details");
+    let parkCode = site.parkCode;
+    return $http({
+      method: "GET",
+      url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkCode}&api_key=${key}`
+    }).then(function(response) {
+      self.alertresults = response.data.data[0];
+      console.log(self.alertresults);
+      $location.path("/camp-details");
+      return self.alertresults;
+    });
   }
   self.getCamp = () => {
       return self.campSite;
   }
+  self.getAlerts = () => {
+    return self.alertresults;
+  }
 
-  // self.getAlerts = (parkcode) => {
-  //   return $http({
-  //     method: "GET",
-  //     url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkcode}&api_key=${key}`
-  //   }).then(function(response) {
-  //     self.alertresults = response.data.data;
-  //     console.log(self.alertresults);
-  //     return self.alertresults;
-  //   });
+  // self.setAlerts = (parkcode) => {
+    
   // }
+
   //this method is called in our results component, it takes the latlong string from each object in our
   //promise. 
   self.createCoord = () => {
