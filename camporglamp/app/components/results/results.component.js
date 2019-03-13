@@ -15,11 +15,17 @@ const results = {
           zoom: 9
         });
         for(let i = 0; i < vm.siteCoord.length; i++){
-          vm.marker = new google.maps.Marker({
-            position: vm.siteCoord[i],
-            map: vm.map,
-            title: vm.campresults[i].name
-          });
+          if(vm.siteCoord[i].lat) {
+            console.log("Good Coords");
+            vm.marker = new google.maps.Marker({
+              position: vm.siteCoord[i],
+              map: vm.map,
+              title: vm.campresults[i].name
+            });
+          }
+          else { 
+            
+          }
         }
       };
       vm.getDetails = function(site) {
@@ -27,8 +33,6 @@ const results = {
         SearchService.setCamp(site);
         // SearchService.setAlerts(site.parkCode);
       }
-        
-
       vm.initMap();
     }
   ]
