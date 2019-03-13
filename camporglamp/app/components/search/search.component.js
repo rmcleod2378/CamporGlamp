@@ -1,6 +1,6 @@
 "use strict";
 const search = {
-    templateUrl: "app/components/search/search.html",
+    templateUrl: `app/components/search/search.html`,
     controller: ['SearchService', '$location', function (SearchService, $location) {
         const vm = this;
         vm.showFooter = false;
