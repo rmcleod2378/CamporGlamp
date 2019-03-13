@@ -21,6 +21,7 @@ const results = {
         }
       };
       vm.getDetails = function(site) {
+        console.log(site)
         SearchService.setCamp(site);
       }
         
