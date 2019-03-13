@@ -4,6 +4,9 @@ const search = {
     controller: ['SearchService', '$location', function (SearchService, $location) {
         const vm = this;
         vm.showFooter = false;
+        vm.footerBtn = false;
+        vm.publicBtn = false
+        // vm.
         //this method is a PROPERTY of our search controller. Onclick (in HTML) it calls the GET from our service.
         vm.campSearch = function () {
             //our service get method
@@ -11,8 +14,14 @@ const search = {
         };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;
-            console.log("click you")
+            vm.footerBtn = !vm.footerBtn;
+            vm.publicBtn = !vm.publicBtn;
+            // console.log("click you")
           }
+
+        vm.hide = () => {
+            vm.publicBtn = !vm.publicBtn;
+        }
     }]
 };
 

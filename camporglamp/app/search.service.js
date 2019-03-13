@@ -54,7 +54,7 @@ function SearchService($http, $location) {
     self.siteCoord = [];
     for (let i = 0; i < self.campresults.length; i++) {
       if (!self.campresults[i].latLong) {
-        self.campresults[i].latLong = "null, null";
+        continue;
       }
       self.latlong = self.campresults[i].latLong;
       self.split = self.latlong.split(" ");
