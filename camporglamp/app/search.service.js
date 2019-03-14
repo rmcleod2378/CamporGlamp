@@ -22,7 +22,7 @@ function SearchService($http, $location) {
     self.state = state;
     return $http({
       method: "GET",
-      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=${state}&limit=15&api_key=${key}`
+      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=${state}&limit=50&api_key=${key}`
     }).then(function(response) {
       self.campresults = response.data.data;
       $location.path("/camp-results");
