@@ -1,6 +1,6 @@
 <div class="results">
   <section ng-repeat="sites in $ctrl.glampresults track by $index" class="campsites">
-      <p>{{sites.name}}</p>
+      <h3>{{sites.name}}</h3>
       
       <button ng-click="$ctrl.getDetails(gsites)">Details</button>
     </section>

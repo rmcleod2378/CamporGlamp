@@ -4,9 +4,11 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-
+  font-family: 'Ubuntu Condensed', sans-serif;
 }
-
+h3 {
+  font-family: 'Walter Turncoat', cursive;
+}
 .split {
   height: 50%;
   width: 100%;
@@ -189,13 +191,13 @@ input::placeholder {
   }
 }
 
-@media (hover: none) {
+/* @media (hover: none) {
   .title:hover {
     background-color: none;
     border-radius: none;
     border: none;
   }
-}
+} */
 
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 1224px) {

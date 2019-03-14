@@ -1,7 +1,7 @@
 <div class="results">
   <section ng-repeat="sites in $ctrl.campresults track by $index" class="campsites">
-    <p>{{sites.name}}</p>
-    <p>{{sites.latLong}}</p>
+    <h3>{{sites.name}}</h3>
+    <!-- <p>{{sites.latLong}}</p> -->
 
     <button ng-click="$ctrl.getDetails(sites)">Details</button>
   </section>
