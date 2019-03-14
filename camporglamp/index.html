@@ -20,18 +20,22 @@
 <body>
     <!-- <p>Camp or Glamp</p> -->
     <ng-view></ng-view>
-
+    <!-- angularjs -->
     <script src='https://code.angularjs.org/1.6.5/angular.js'></script>
     <script src='https://code.angularjs.org/1.6.5/angular-route.js'></script>
     <script src='app/app.module.js'></script>
     <script src='app/app.config.js'></script>
     <script src='app/search.service.js'></script>
-    <!-- <script src='app/map.service.js'></script> -->
+    <!-- search page -->
     <script src='app/components/search/search.component.js'></script>
-    <script src='app/components/results/results.component.js'></script>
+    <!-- campsites -->
+    <script src='app/components/campResults/campResults.component.js'></script>
     <script src='app/components/campDetails/campDetails.component.js'></script> 
+    <!-- glampsites -->
+    <script src='app/components/glampResults/glampResults.component.js'></script>
+    <script src='app/components/glampDetails/glampDetails.component.js'></script> 
     <script src="app/expand.directive.js"></script>  
-    
+    <!-- google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF6p7FK63oG_e_XmeQybRKRKfB8qG6SEU"></script>
 
 </body>

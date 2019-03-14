@@ -1,0 +1,13 @@
+<div class="results">
+  <h1>HELLO</h1>
+  <section ng-repeat="sites in $ctrl.glampresults track by $index" class="campsites">
+      <p>{{sites.name}}</p>
+      
+      <button ng-click="$ctrl.getDetails(gsites)">Details</button>
+    </section>
+</div>
+
+<div id="map"></div>
+
+<i class="fixedRight fas fa-map-marked-alt"></i>
+<i class="fixedLeft fas fa-list-ul"></i>

@@ -8,13 +8,13 @@ const search = {
         vm.publicBtn = false
         // vm.
         //this method is a PROPERTY of our search controller. Onclick (in HTML) it calls the GET from our service.
-        vm.campSearch = function () {
+        vm.campSearch = function (state) {
             //our service get method
-            SearchService.get(vm.state);
+            SearchService.get(state);
         };
-        vm.glampSearch = function () {
+        vm.glampSearch = function (gstate) {
             //our service get method
-            SearchService.setGlamp(vm.gstate);
+            SearchService.setGlamp(gstate);
         };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;

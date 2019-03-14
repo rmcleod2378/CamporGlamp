@@ -6,27 +6,49 @@
 <section class="split top left">
   <div class="centered">
     <form ng-submit="$ctrl.campSearch($ctrl.state)">
-        <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
-        <input ng-model="$ctrl.state" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
-        <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+      <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
+      <input
+        ng-model="$ctrl.state"
+        expand
+        class="desktop_input2"
+        type="text"
+        placeholder="Start Here: Enter State"
+        ng-focus=""
+      />
+      <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
     </form>
   </div>
 </section>
 
 <p class="or">~OR~</p>
-<form ng-submit="$ctrl.campSearch($ctrl.state)">
-        <input ng-model="$ctrl.state" expand class="mobile_input" type="text" placeholder="Start Here: Enter State" ng-focus="">
+
+<form ng-submit="$ctrl.campSearch(state)">
+  <input
+    ng-model="state"
+    expand
+    class="mobile_input"
+    type="text"
+    placeholder="Start Here: Enter State"
+    ng-focus=""
+  />
 </form>
 
-
 <section class="split bottom right">
-  <div class="centered" >
-    <form >
-        <p ng-click="$ctrl.glampSearch($ctrl.gstate)" class="title glamp">Glamp</p>
-        <input ng-model="$ctrl.gstate" expand class="desktop_input2" type="text" placeholder="Start Here: Enter State" ng-focus="">
-        <button class="search" ng-click="$ctrl.glampSearch($ctrl.gstate)">SEARCH</button>
+  <div class="centered">
+    <form>
+      <p ng-click="$ctrl.glampSearch(gstate)" class="title glamp">
+        Glamp
+      </p>
+      <input
+        ng-model="gstate"
+        expand
+        class="desktop_input2"
+        type="text"
+        placeholder="Start Here: Enter State"
+        ng-focus=""
+      />
+      <button class="search" ng-click="$ctrl.glampSearch(gstate)">SEARCH</button>
     </form>
-
   </div>
 </section>
 
@@ -35,7 +57,11 @@
   <p class="contact">Contact Us, Terms, & more</p>
 </button>
 
-<button class="footer_clear" ng-show="$ctrl.footerBtn" ng-click="$ctrl.hide(); $ctrl.showFooter = false; $ctrl.footerBtn = false">Close <i class="material-icons">clear</i>
+<button
+  class="footer_clear"
+  ng-show="$ctrl.footerBtn"
+  ng-click="$ctrl.hide(); $ctrl.showFooter = false; $ctrl.footerBtn = false">
+  Close <i class="material-icons">clear</i>
 </button>
 
 <div ng-show="$ctrl.showFooter" class="footer_container">
@@ -45,4 +71,3 @@
     <p class="footer_txt">Maps provided by Google</p>
   </footer>
 </div>
-

@@ -7,10 +7,7 @@ const campDetails = {
         console.log(vm.campSite)
         vm.alert = SearchService.getAlerts();
         console.log(vm.alert)
-
     }]
 }
-
-
 
 angular.module("App").component("campDetails", campDetails);

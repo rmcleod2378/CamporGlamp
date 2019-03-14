@@ -8,10 +8,16 @@ angular.module("App").config(["$routeProvider", function($routeProvider) {
     .when("/search", {
         template:'<search></search>',
     })
-    .when("/results", {
-      template:'<results></results>',
+    .when("/camp-results", {
+      template:'<camp-results></camp-results>',
     })
     .when("/camp-details", {
         template:'<camp-details></camp-details>'
+    })
+    .when("/glamp-results", {
+      template:'<glamp-results></glamp-results>',
+    })
+    .when("/glamp-details", {
+        template:'<glamp-details></glamp-details>'
     })
 }]);

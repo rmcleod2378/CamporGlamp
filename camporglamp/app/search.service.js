@@ -17,6 +17,7 @@ function SearchService($http, $location) {
   self.campSite = null;
   self.alertresults = null;
 
+
   self.get = (state) => {
     self.state = state;
     return $http({
@@ -24,7 +25,7 @@ function SearchService($http, $location) {
       url: `https://api.nps.gov/api/v1/campgrounds?stateCode=${state}&limit=15&api_key=${key}`
     }).then(function(response) {
       self.campresults = response.data.data;
-      $location.path("/results");
+      $location.path("/camp-results");
       console.log(self.campresults);
       return self.campresults;
     });
@@ -61,7 +62,7 @@ function SearchService($http, $location) {
       url: `/glamp/${gstate}`   
     }).then(function(response) {
       self.glampresults = response.data;
-      $location.path("/results");
+      $location.path("/glamp-results");
       console.log(self.glampresults);
       return self.glampresults;
     });
