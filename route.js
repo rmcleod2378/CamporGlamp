@@ -11,8 +11,8 @@ const pool = require("./connection");
 //   });
 // }
 
-glamp.get("/glamp/:state", (req, res) => {
-  pool.query("select * from glampsites where state=$1::text", [req.params.state]).then(function(result) {
+glamp.get("/glamp", (req, res) => {
+  pool.query("select * from glampsites where state='MI'").then(function(result) {
     res.send(result.rows);
   console.log("GET req made");
   })
