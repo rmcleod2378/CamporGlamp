@@ -1,11 +1,20 @@
 
-<div class="results">
+<!-- <div class="results">
   <section ng-repeat="sites in $ctrl.campresults track by $index" class="campsites">
     <p>{{sites.name}}</p>
     <p>{{sites.latLong}}</p>
 
     <button ng-click="$ctrl.getDetails(sites)">Details</button>
   </section>
+</div> -->
+
+<div class="results">
+    <h1>HELLO</h1>
+    <section ng-repeat="sites in $ctrl.glampresults track by $index" class="campsites">
+        <p>{{sites.name}}</p>
+        
+        <button ng-click="$ctrl.getDetails(gsites)">Details</button>
+      </section>
 </div>
 
 <div id="map"></div>

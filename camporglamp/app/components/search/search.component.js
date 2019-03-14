@@ -14,8 +14,7 @@ const search = {
         };
         vm.glampSearch = function () {
             //our service get method
-            console.log("hi")
-            SearchService.getGlamp(vm.state);
+            SearchService.setGlamp(vm.gstate);
         };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;

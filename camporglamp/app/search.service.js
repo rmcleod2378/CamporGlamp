@@ -4,9 +4,12 @@ function SearchService($http, $location) {
   const key = "OP2F1MT0eeFGORzUkOdqULyY1Ed9dB9hdDiFIlD8";
   const self = this;
   self.state;
+  self.gstate;
   self.parkcode;
   //variable storing our promise
   self.campresults = null;
+  self.glampresults;
+  self.gsiteCoord = null;
   //variable storing our objects
   self.siteCoord = null;
   //get method, called onclick in our search.html
@@ -50,23 +53,36 @@ function SearchService($http, $location) {
   self.getAlerts = () => {
     return self.alertresults;
   }
-
-  self.getGlamp = (state) => {
+  
+  self.setGlamp = (gstate) => {
+    self.gstate = gstate;
     return $http({
       method: "GET",
-      url: `/glamp/${state}`   
+      url: `/glamp/${gstate}`   
     }).then(function(response) {
-      self.campresults = response;
+      self.glampresults = response.data;
       $location.path("/results");
-      console.log(self.campresults);
-      return self.campresults;
-    })
+      console.log(self.glampresults);
+      return self.glampresults;
+    });
   };
+  self.getGData = () => {
+    return self.glampresults;
+  }
 
-  // self.setAlerts = (parkcode) => {
-    
-  // }
-
+  self.createGCoord = () => {
+    self.gsiteCoord = [];
+    for (let i = 0; i < self.glampresults.length; i++) {
+      console.log(self.glampresults[i]);
+    self.GCoord = {
+      lat: self.glampresults[i].lat,
+      lng: self.glampresults[i].lng
+    }
+    self.gsiteCoord.push(angular.copy(self.GCoord));
+    console.log(self.gsiteCoord);
+  }
+    return self.gsiteCoord;
+};
   //this method is called in our results component, it takes the latlong string from each object in our
   //promise. 
   self.createCoord = () => {
