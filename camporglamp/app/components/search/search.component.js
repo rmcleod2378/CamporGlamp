@@ -12,9 +12,9 @@ const search = {
             //our service get method
             SearchService.get(state);
         };
-        vm.glampSearch = function (gstate) {
+        vm.glampSearch = function (state) {
             //our service get method
-            SearchService.setGlamp(gstate);
+            SearchService.setGlamp(state);
         };
         vm.show = () => {
             vm.showFooter = !vm.showFooter;

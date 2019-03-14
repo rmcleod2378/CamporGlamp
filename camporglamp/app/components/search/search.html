@@ -5,24 +5,24 @@
 
 <section class="split top left">
   <div class="centered">
-    <form ng-submit="$ctrl.campSearch($ctrl.state)">
-      <p class="title camp" ng-click="$ctrl.campSearch($ctrl.state)">Camp</p>
+    <form ng-submit="$ctrl.campSearch(state)">
+      <p class="title camp" ng-click="$ctrl.campSearch(state)">Camp</p>
       <input
-        ng-model="$ctrl.state"
+        ng-model="state"
         expand
         class="desktop_input2"
         type="text"
         placeholder="Start Here: Enter State"
         ng-focus=""
       />
-      <button class="search" ng-click="$ctrl.campSearch()">SEARCH</button>
+      <button class="search" ng-click="$ctrl.campSearch(state)">SEARCH</button>
     </form>
   </div>
 </section>
 
 <p class="or">~OR~</p>
 
-<form ng-submit="$ctrl.campSearch(state)">
+<form>
   <input
     ng-model="state"
     expand
@@ -36,18 +36,18 @@
 <section class="split bottom right">
   <div class="centered">
     <form>
-      <p ng-click="$ctrl.glampSearch(gstate)" class="title glamp">
+      <p ng-click="$ctrl.glampSearch(state)" class="title glamp">
         Glamp
       </p>
       <input
-        ng-model="gstate"
+        ng-model="state"
         expand
         class="desktop_input2"
         type="text"
         placeholder="Start Here: Enter State"
         ng-focus=""
       />
-      <button class="search" ng-click="$ctrl.glampSearch(gstate)">SEARCH</button>
+      <button class="search" ng-click="$ctrl.glampSearch(state)">SEARCH</button>
     </form>
   </div>
 </section>
