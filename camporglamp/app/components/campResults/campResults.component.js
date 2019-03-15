@@ -24,7 +24,7 @@ const campResults = {
           fixedLeft.css("display", "none");
           fixedRight.css("display", "flex");
           results.css("display", "flex");
-      // }
+       }
 
 
 
@@ -32,7 +32,7 @@ const campResults = {
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
           center: vm.siteCoord[0],
-          zoom: 9
+          zoom: 6
         });
         for(let i = 0; i < vm.siteCoord.length; i++){
           if(vm.siteCoord[i].lat) {

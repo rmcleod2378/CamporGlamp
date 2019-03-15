@@ -31,7 +31,7 @@ const glampResults = {
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
           center: vm.gsiteCoord[0],
-          zoom: 9
+          zoom: 6
         });
         for(let i = 0; i < vm.gsiteCoord.length; i++){
           if(vm.gsiteCoord[i].lat) {

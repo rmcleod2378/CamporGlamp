@@ -5,7 +5,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Ubuntu Condensed', sans-serif;
-  background-color: rgba(241, 237, 216, 0.911);
+  background: linear-gradient(to bottom right, rgba(134, 54, 0, 0.5), rgba(56, 36, 0, 0.5), 
+  rgba(39, 22, 0, 0.5));
 }
 h3 {
   font-family: 'Source Sans Pro', sans-serif;;
@@ -16,6 +17,7 @@ h3 {
   position: fixed;
   z-index: 1;
   overflow-x: hidden;
+  box-shadow: 0px 0px 10px 0px black;
   /* padding-top: 20px; */
 }
 
@@ -32,7 +34,7 @@ h3 {
 .top:hover {
   transition: ease-in-out .3s;
   z-index: 4;
-  width:100%;
+  width:95%;
 }
 
 /* Control the right side */
@@ -48,7 +50,7 @@ h3 {
 .bottom:hover {
   transition: ease-in-out .3s;
   z-index: 4;
-  width: 100%;
+  width: 95%;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -78,7 +80,7 @@ h3 {
 .glamp {
   margin: 0% 1% 0% 1%;
   font-family: 'Montserrat Subrayada', sans-serif;
-  color: rgb(194, 229, 151);
+  color: rgb(126, 161, 83);
   text-shadow: 1px 1px 0 rgb(87, 167, 87), 4px 4px 0 rgb(255, 255, 255);
 }
 
@@ -255,12 +257,13 @@ input::placeholder {
     align-content: flex-start;
     justify-content: center;
     flex-wrap: wrap;
-    width: 66%;
   }
   .campsites {
+    display: flex;
+    flex-direction: column;
     margin: 5px 5px;
     width: 30%;
-    height: 200px;
+    height: 250px;
     padding: 5px;
   }
   #map {
