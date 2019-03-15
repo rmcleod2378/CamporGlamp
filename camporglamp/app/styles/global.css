@@ -5,9 +5,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Ubuntu Condensed', sans-serif;
+  background-color: rgba(241, 237, 216, 0.911);
 }
 h3 {
-  font-family: 'Walter Turncoat', cursive;
+  font-family: 'Source Sans Pro', sans-serif;;
 }
 .split {
   height: 50%;
@@ -21,21 +22,33 @@ h3 {
 /* Control the left side */
 .top {
   top: 0;
+  z-index:3;
   background-image: url(../styles/Images/camping1.jpg);
   background-position: center;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.top:hover {
+  transition: ease-in-out .2s;
+  z-index: 4;
+  width:100%;
+}
 
 /* Control the right side */
 .bottom {
   bottom: 0; 
+  z-index:3;
   background-image: url(../styles/Images/Glamping1.jpg);
   background-position: center;
   background-color: #ffffff;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.bottom:hover {
+  transition: ease-in-out .2s;
+  z-index: 4;
+  width: 100%;
 }
 
 /* If you want the content centered horizontally and vertically */
@@ -49,25 +62,23 @@ h3 {
 
 .title {
   font-size: 8em;
-  color: antiquewhite;
+  color: rgb(255, 255, 255);
   margin-bottom: 10px;
   margin-top: 60px;
 }
 
 .title:hover {
-  background-color: rgba(8, 73, 8, 0.7);
-  border-radius: 33%;
-  border: 1px solid green;
+  transform: scale(1.1);
 }
 
 .camp {
-  font-family: 'Josefin Slab', serif;
-  text-shadow: 3px 0 0 rgb(142, 92, 35), 5px 0 0 #b3400b;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-shadow: 3px 0 0 rgb(206, 82, 0), 5px 0 0 rgb(119, 38, 38);
 }
 .glamp {
-  font-family: 'Montserrat Alternates', sans-serif;
-  color: #A57164;
-  text-shadow: 1px 1px 0 antiquewhite, 4px 4px 0 #8e2723;
+  font-family: 'Montserrat Subrayada', sans-serif;
+  color: rgb(194, 229, 151);
+  text-shadow: 1px 1px 0 rgb(87, 167, 87), 4px 4px 0 rgb(255, 255, 255);
 }
 
 .desktop_input1, .desktop_input2 {
@@ -120,20 +131,21 @@ input::placeholder {
 
 .footer_btn, .footer_clear {
     position: fixed;
+    border: none;
     bottom: 0px;
     right: 0px; 
     background-color: white;
     color: black;
-    border: 1px solid red;
-    border-radius: 4px;
     z-index: 200;
-    padding: 5px;
+    padding: 10px;
     margin: 10px 0 0 10px;
     cursor: pointer;
     display: inline-flex;
     text-align: center;
 }
-
+.footer_btn:hover {
+    color: brown;
+}
 .contact, .public {
   margin: 0;
 }
@@ -203,8 +215,7 @@ input::placeholder {
 @media only screen and (min-width : 1224px) {
 
   .split {
-    top: 0; 
-    height: 100%;
+    top: 25%; 
     width: 50%;
   }
 
@@ -235,6 +246,13 @@ input::placeholder {
   results {
     display: flex;
   }
+  camp-details {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .results {
     flex-direction: row;
     align-items: flex-start;
@@ -246,10 +264,11 @@ input::placeholder {
   .campsites {
     margin: 5px 5px;
     width: 30%;
-    height: 300px;
+    height: 200px;
+    padding: 5px;
   }
   #map {
-    width: 33%;
+    width: 100%;
     height: 100vh;
     display: flex;
   }
