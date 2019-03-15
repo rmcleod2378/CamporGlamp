@@ -7,6 +7,10 @@ const campDetails = {
         console.log(vm.campSite)
         vm.alert = SearchService.getAlerts();
         console.log(vm.alert)
+        vm.campSearch = function (state) {
+            //our service get method
+            SearchService.get(state);
+        };
     }]
 }
 
