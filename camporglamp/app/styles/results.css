@@ -3,6 +3,10 @@ button {
   padding: 5px 10px;
   background-color: transparent;
 }
+button:hover {
+  transition: ease-in-out .2s;
+  background-color: grey;
+}
 .results {
    display: flex;
    flex-direction: column;
