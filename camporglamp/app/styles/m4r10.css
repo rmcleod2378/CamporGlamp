@@ -1,0 +1,16 @@
+.secret {
+    background-image: url(../styles/Images/icons.jpg);
+    background-position: center;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+}
+.mario {
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    color: pink;
+}
