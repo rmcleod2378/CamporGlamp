@@ -1,0 +1,20 @@
+/* CAMP DETAILS PAGE */
+
+camp-details {
+    display:flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+
+    background-color: rgba(255,255,255,0.5);
+  }
+  camp-details section {
+      margin: 1% 2% 1% 2%;
+  }
+  camp-details h4:nth-child(odd) {
+      font-weight: bold;
+  }
+  camp-details p {
+      margin: 1% 2% 1% 2%;
+  }

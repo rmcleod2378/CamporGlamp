@@ -30,7 +30,7 @@ h3 {
   background-size: cover;
 }
 .top:hover {
-  transition: ease-in-out .2s;
+  transition: ease-in-out .3s;
   z-index: 4;
   width:100%;
 }
@@ -46,7 +46,7 @@ h3 {
   background-size: cover;
 }
 .bottom:hover {
-  transition: ease-in-out .2s;
+  transition: ease-in-out .3s;
   z-index: 4;
   width: 100%;
 }
@@ -61,7 +61,7 @@ h3 {
 }
 
 .title {
-  font-size: 8em;
+  font-size: 6em;
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
   margin-top: 60px;
@@ -76,6 +76,7 @@ h3 {
   text-shadow: 3px 0 0 rgb(206, 82, 0), 5px 0 0 rgb(119, 38, 38);
 }
 .glamp {
+  margin: 0% 1% 0% 1%;
   font-family: 'Montserrat Subrayada', sans-serif;
   color: rgb(194, 229, 151);
   text-shadow: 1px 1px 0 rgb(87, 167, 87), 4px 4px 0 rgb(255, 255, 255);
@@ -246,13 +247,7 @@ input::placeholder {
   results {
     display: flex;
   }
-  camp-details {
-    display:flex;
-    flex-direction: column;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  
   .results {
     flex-direction: row;
     align-items: flex-start;
