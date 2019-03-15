@@ -12,7 +12,7 @@ const pool = require("./connection");
 // }
 
 glamp.get("/glamp", (req, res) => {
-  pool.query("select * from glampsites where state='MI'").then(function(result) {
+  pool.query("select * from glampsites").then(function(result) {
     res.send(result.rows);
   console.log("GET req made");
   })

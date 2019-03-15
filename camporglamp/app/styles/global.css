@@ -164,9 +164,9 @@ input::placeholder {
   bottom: 0;
   width: 100%;
   height: auto;   /* Footer height */
-  z-index: 2;
+  z-index: 10;
   /* border: 1px solid blue; */
-  background-color: antiquewhite;
+  background-color: rgba(255,255,255, 1);
 }
 
 .footer_container {
@@ -178,6 +178,7 @@ input::placeholder {
 }
 
 .footer_txt {
+  margin-left: 1%;
   color: black;
 }
 

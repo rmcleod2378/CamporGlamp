@@ -9,6 +9,7 @@ function SearchService($http, $location) {
   //variable storing our promise
   self.campresults = null;
   self.glampresults;
+  self.glampSite = null;
   self.gsiteCoord = null;
   //variable storing our objects
   self.siteCoord = null;
@@ -63,24 +64,35 @@ function SearchService($http, $location) {
     }).then(function(response) {
       self.glampresults = response.data;
       $location.path("/glamp-results");
-      console.log(self.glampresults);
+      // console.log(self.glampresults);
       return self.glampresults;
     });
   };
+  
+  self.getGlamp = (sites) => {
+    self.glampSite = sites;
+    console.log(self.glampSite);
+    $location.path("/glamp-details");
+    return self.glampSite;
+  }
+  self.glampDetails = () => {
+    console.log(self.glampSite);
+    return self.glampSite;
+  }
   self.getGData = () => {
     return self.glampresults;
-  }
+  };
 
   self.createGCoord = () => {
     self.gsiteCoord = [];
     for (let i = 0; i < self.glampresults.length; i++) {
-      console.log(self.glampresults[i]);
+      // console.log(self.glampresults[i]);
     self.GCoord = {
       lat: self.glampresults[i].lat,
       lng: self.glampresults[i].lng
     }
     self.gsiteCoord.push(angular.copy(self.GCoord));
-    console.log(self.gsiteCoord);
+    // console.log(self.gsiteCoord);
   }
     return self.gsiteCoord;
 };

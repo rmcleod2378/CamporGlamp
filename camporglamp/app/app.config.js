@@ -19,5 +19,5 @@ angular.module("App").config(["$routeProvider", function($routeProvider) {
     })
     .when("/glamp-details", {
         template:'<glamp-details></glamp-details>'
-    })
+    });
 }]);

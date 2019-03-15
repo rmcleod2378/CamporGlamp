@@ -25,10 +25,10 @@ const glampResults = {
           }
         }
       };
-      //get glampsites' deatails
-      vm.getDetails = function(site) {
-        console.log(site)
-        SearchService.setCamp(site);
+      //get glampsites' details
+      vm.getDetails = function(sites) {
+        console.log(sites)
+        SearchService.getGlamp(sites);
       }
       vm.initMap();
     }

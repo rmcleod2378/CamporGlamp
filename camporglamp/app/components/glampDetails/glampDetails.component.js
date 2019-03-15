@@ -3,8 +3,12 @@ const glampDetails = {
     templateUrl:`app/components/glampDetails/glampDetails.html`,
     controller: ["SearchService", function(SearchService) {
         const vm = this;
-        vm.campSite = SearchService.getCamp();
-        console.log(vm.campSite)
+        vm.glampDetails = SearchService.glampDetails();
+        console.log(vm.glampDetails);
+        vm.glampSearch = function () {
+            //our service get method
+            SearchService.setGlamp();
+        };
     }]
 }
 
