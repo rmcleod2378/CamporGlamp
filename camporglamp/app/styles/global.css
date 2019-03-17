@@ -181,7 +181,15 @@ input::placeholder {
   margin-left: 1%;
   color: black;
 }
-
+button {
+  border: 1px solid black;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+button:hover {
+  background: grey;
+  color: #ffffff;
+}
 
 /* Style the image inside the centered container, if needed */
 /* .centered img {
