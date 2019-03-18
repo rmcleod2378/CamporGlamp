@@ -18,7 +18,13 @@ glamp.get("/glamp", (req, res) => {
   })
   
 });
-
+glamp.get("/camp", (req, res) => {
+  pool.query("select * from campingsites").then(function(result) {
+    res.send(result.rows);
+  console.log("GET req made from camp");
+  })
+  
+});
 module.exports = glamp;
 
 // res.send(req.params.state);

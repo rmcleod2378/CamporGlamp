@@ -5,7 +5,7 @@ const campResults = {
     "SearchService",
     function(SearchService) {
       const vm = this;
-      vm.campresults = SearchService.getData();
+      vm.campresults = SearchService.getCData();
       vm.siteCoord = SearchService.createCoord();
 
 
@@ -30,6 +30,7 @@ const campResults = {
 
       // draws map for campsites
       vm.initMap = function() {
+        console.log(vm.siteCoord);
         vm.map = new google.maps.Map(document.getElementById("map"), {
           center: vm.siteCoord[0],
           zoom: 6
