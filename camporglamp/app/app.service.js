@@ -27,7 +27,7 @@ function SearchService($http, $location) {
       MI&limit=50&api_key=${key}`
     }).then(function(response) {
       self.campresults = response.data.data;
-      $location.path("/camp-results");
+      $location.path("/results");
       console.log(self.campresults);
       return self.campresults;
     });
@@ -46,7 +46,7 @@ function SearchService($http, $location) {
     }).then(function(response) {
       self.alertresults = response.data.data[0];
       console.log(self.alertresults);
-      $location.path("/camp-details");
+      $location.path("/details");
       return self.alertresults;
     });
   }
@@ -63,7 +63,7 @@ function SearchService($http, $location) {
       url: `/glamp`   
     }).then(function(response) {
       self.glampresults = response.data;
-      $location.path("/glamp-results");
+      $location.path("/results");
       // console.log(self.glampresults);
       return self.glampresults;
     });
@@ -72,7 +72,7 @@ function SearchService($http, $location) {
   self.getGlamp = (sites) => {
     self.glampSite = sites;
     console.log(self.glampSite);
-    $location.path("/glamp-details");
+    $location.path("/detail");
     return self.glampSite;
   }
   self.glampDetails = () => {

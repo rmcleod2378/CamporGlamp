@@ -1,31 +1,29 @@
 "use strict";
-const glampResults = {
-  templateUrl: `app/components/glampResults/glampResults.html`,
-  controller: ["SearchService", function(SearchService) {
+const results = {
+  templateUrl: `app/components/results/results.html`,
+  controller: [
+    "SearchService",
+    function(SearchService) {
       const vm = this;
       vm.glampresults = SearchService.getGData();
       vm.gsiteCoord = SearchService.createGCoord();
-
 
       const map = angular.element(document.querySelector("#map"));
       const results = angular.element(document.querySelector(".results"));
       const fixedRight = angular.element(document.querySelector(".fixedRight"));
       const fixedLeft = angular.element(document.querySelector(".fixedLeft"));
       vm.showMap = function() {
-          map.css("display", "flex");
-          fixedLeft.css("display", "flex");
-          fixedRight.css("display", "none");
-          results.css("display", "none");
-      }
+        map.css("display", "flex");
+        fixedLeft.css("display", "flex");
+        fixedRight.css("display", "none");
+        results.css("display", "none");
+      };
       vm.showResults = function() {
-          map.css("display", "none");
-          fixedLeft.css("display", "none");
-          fixedRight.css("display", "flex");
-          results.css("display", "flex");
-      }
-
-
-
+        map.css("display", "none");
+        fixedLeft.css("display", "none");
+        fixedRight.css("display", "flex");
+        results.css("display", "flex");
+      };
 
       // draws map for glampsites
       vm.initMap = function() {
@@ -33,27 +31,25 @@ const glampResults = {
           center: vm.gsiteCoord[0],
           zoom: 6
         });
-        for(let i = 0; i < vm.gsiteCoord.length; i++){
-          if(vm.gsiteCoord[i].lat) {
+        for (let i = 0; i < vm.gsiteCoord.length; i++) {
+          if (vm.gsiteCoord[i].lat) {
             console.log("Good Coords");
             vm.marker = new google.maps.Marker({
               position: vm.gsiteCoord[i],
               map: vm.map,
               title: vm.glampresults[i].name
             });
-          }
-          else { 
+          } else {
           }
         }
       };
       //get glampsites' details
       vm.getDetails = function(sites) {
-        console.log(sites)
+        console.log(sites);
         SearchService.getGlamp(sites);
-      }
-      vm.initMap();
+      };
     }
   ]
 };
 
-angular.module("App").component("glampResults", glampResults);
+angular.module("App").component("results", results);

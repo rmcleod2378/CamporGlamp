@@ -1,73 +1,9 @@
-<!-- <form ng-submit="$ctrl.campSearch($ctrl.state)">
-        <input ng-model="$ctrl.state" type="text" placeholder="Enter a state (ex Michigan)">
-        <button>Let's Go!</button>
-</form> -->
-
-<section class="split top left">
-  <div class="centered">
-    <form ng-submit="$ctrl.campSearch(state)">
-      <p class="title camp" ng-click="$ctrl.campSearch(state)">Camp</p>
-      <!-- <input
-        ng-model="state"
-        expand
-        class="desktop_input2"
-        type="text"
-        placeholder="Start Here: Enter State"
-        ng-focus=""
-      /> -->
-      <!-- <button class="search" ng-click="$ctrl.campSearch(state)">SEARCH</button> -->
-    </form>
+<section class="search">
+  <div class="camp">
+    <h1>Camp</h1>
+  </div>
+  <div class="glamp">
+    <h1 ng-click="$ctrl.glampSearch()">Glamp</h1>
   </div>
 </section>
 
-<!-- <p class="or">~OR~</p> -->
-
-<!-- <form>
-  <input
-    ng-model="state"
-    expand
-    class="mobile_input"
-    type="text"
-    placeholder="Start Here: Enter State"
-    ng-focus=""
-  />
-</form> -->
-
-<section class="split bottom right">
-  <div class="centered">
-    <form>
-      <p ng-click="$ctrl.glampSearch()" class="title glamp">
-        Glamp
-      </p>
-      <!-- <input
-        ng-model="state"
-        expand
-        class="desktop_input2"
-        type="text"
-        placeholder="Start Here: Enter State"
-        ng-focus=""
-      /> -->
-      <!-- <button class="search" ng-click="$ctrl.glampSearch(state)">SEARCH</button> -->
-    </form>
-  </div>
-</section>
-
-<button ng-click="$ctrl.show()" ng-hide="$ctrl.publicBtn" class="footer_btn">
-  <p class="public"><i class="material-icons md-18">public</i></p>
-  <p class="contact">Contact Us, Terms, & more</p>
-</button>
-
-<button
-  class="footer_clear"
-  ng-show="$ctrl.footerBtn"
-  ng-click="$ctrl.hide(); $ctrl.showFooter = false; $ctrl.footerBtn = false">
-  Close <i class="material-icons">clear</i>
-</button>
-
-<div ng-show="$ctrl.showFooter" class="footer_container">
-  <footer id="footer">
-    <p class="footer_txt">Team Camp or Glamp</p>
-    <p class="footer_txt">Data provided by the National Parks Service</p>
-    <p class="footer_txt">Maps provided by Google</p>
-  </footer>
-</div>
