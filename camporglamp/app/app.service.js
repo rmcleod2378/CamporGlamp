@@ -101,29 +101,15 @@ function SearchService($http, $location) {
   self.createCoord = () => {
     self.siteCoord = [];
     for (let i = 0; i < self.campresults.length; i++) {
-      if (!self.campresults[i].latLong) {
-        continue;
-      }
-      self.latlong = self.campresults[i].latLong;
-      self.split = self.latlong.split(" ");
-      // console.log(self.split);
-      for (let j = 0; j < 1; j++) {
-        self.len1 = self.split[j].length;
-        self.len2 = self.split[j + 1].length;
-        self.str1 = self.split[j].substr(5, self.len1);
-        self.str2 = self.split[j + 1].substr(4, self.len2);
-        self.num1 = parseFloat(self.str1);
-        self.num2 = parseFloat(self.str2);
-        self.coordinates = {
-          lat: self.num1,
-          lng: self.num2
+        self.Coord = {
+          lat: self.campresults[i].lat,
+          lng: self.campresults[i].lng
         };
-        self.siteCoord.push(angular.copy(self.coordinates));
+        self.siteCoord.push(angular.copy(self.Coord));
+        console.log(self.siteCoord);
       }
+      return self.siteCoord;
     }
-    // console.log(self.siteCoord);
-    return self.siteCoord;
-  };
-}
+};
 
 angular.module("App").service("SearchService", SearchService);
