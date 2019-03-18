@@ -1,0 +1,31 @@
+<header class="header">
+  <div class="leftnav">
+    <a href="#!/search">Search</a>
+  </div>
+  <div class="rightnav">
+    <a href="#!/results">Results</a>
+    <a href="#!/details">Details</a>
+  </div>
+</header>
+
+<ng-view></ng-view>
+
+<button ng-click="$ctrl.show()" ng-hide="$ctrl.publicBtn" class="footer_btn">
+  <p class="public"><i class="material-icons md-18">public</i></p>
+  <p class="contact">Contact Us, Terms, & more</p>
+</button>
+
+<button
+  class="footer_clear"
+  ng-show="$ctrl.footerBtn"
+  ng-click="$ctrl.hide(); $ctrl.showFooter = false; $ctrl.footerBtn = false">
+  Close <i class="material-icons">clear</i>
+</button>
+
+<div ng-show="$ctrl.showFooter" class="footer_container">
+  <footer id="footer">
+    <p class="footer_txt">Team Camp or Glamp</p>
+    <p class="footer_txt">Data provided by the National Parks Service</p>
+    <p class="footer_txt">Maps provided by Google</p>
+  </footer>
+</div>

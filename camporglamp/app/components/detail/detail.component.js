@@ -1,10 +1,10 @@
 "use strict";
-const glampDetails = {
-    templateUrl:`app/components/glampDetails/glampDetails.html`,
+const detail = {
+    templateUrl:`app/components/detail/detail.html`,
     controller: ["SearchService", function(SearchService) {
         const vm = this;
         vm.glampDetails = SearchService.glampDetails();
-        console.log(vm.glampDetails);
+        // console.log(vm.detail);
         vm.glampSearch = function () {
             //our service get method
             SearchService.setGlamp();
@@ -12,4 +12,4 @@ const glampDetails = {
     }]
 }
 
-angular.module("App").component("glampDetails", glampDetails);
+angular.module("App").component("detail", detail);

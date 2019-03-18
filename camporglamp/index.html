@@ -7,11 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="app/styles/m4r10.css">
-    <link rel="stylesheet" href="app/styles/search.css">
-    <link rel="stylesheet" href="app/styles/results.css">
-    <link rel="stylesheet" href="app/styles/details.css">
-    <link rel="stylesheet" href="app/styles/global.css">
+    <link rel="stylesheet" href="app/styles/style.css">
+    <link rel="stylesheet" href="app/styles/mediaqueries.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed|Source+Sans+Pro:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat+Subrayada:700|Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,24 +17,23 @@
     <title>Camp|Glamp</title>
 </head>
 <body>
-    <!-- <p>Camp or Glamp</p> -->
-    <ng-view></ng-view>
+
+    <app-root></app-root>
+
     <!-- angularjs -->
     <script src='https://code.angularjs.org/1.6.5/angular.js'></script>
     <script src='https://code.angularjs.org/1.6.5/angular-route.js'></script>
-    <script src='app/app.module.js'></script>
-    <script src='app/app.config.js'></script>
-    <script src='app/search.service.js'></script>
+    <script src="./app/app.module.js"></script>
+    <script src="./app/app.service.js"></script>
+    <script src="./app/app.config.js"></script>
+    <script src="./app/app.component.js"></script>
     <!-- search page -->
-    <script src='app/components/search/search.component.js'></script>
-    <!-- campsites -->
-    <script src='app/components/campResults/campResults.component.js'></script>
-    <script src='app/components/campDetails/campDetails.component.js'></script> 
-    <!-- glampsites -->
-    <script src='app/components/glampResults/glampResults.component.js'></script>
-    <script src='app/components/glampDetails/glampDetails.component.js'></script> 
+    <script src='./app/components/search/search.component.js'></script>
+    <!-- camp and glamp results-->
+    <script src='./app/components/results/results.component.js'></script>
+    <script src='./app/components/detail/detail.component.js'></script> 
+    <!-- easter eggs -->
     <script src='app/components/secret/secret.component.js'></script>
-    <script src="app/expand.directive.js"></script>  
     <!-- google maps -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF6p7FK63oG_e_XmeQybRKRKfB8qG6SEU"></script>
 
