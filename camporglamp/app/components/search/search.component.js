@@ -5,6 +5,10 @@ const search = {
     "SearchService",
     function(SearchService) {
       const vm = this;
+      vm.campSearch = function() {
+        SearchService.getCamp();
+        console.log("Hi");
+      };
       vm.glampSearch = function() {
         SearchService.setGlamp();
       };

@@ -19,14 +19,14 @@ function SearchService($http, $location) {
   self.alertresults = null;
 
 
-  self.get = () => {
+  self.getCamp = () => {
     return $http({
       method: "GET",
       url: `/camp`   
     }).then(function(response) {
       self.campresults = response.data;
       console.log(self.campresults);
-      $location.path("/camp-results");
+      $location.path("/results");
       return self.campresults;
     });
   };
