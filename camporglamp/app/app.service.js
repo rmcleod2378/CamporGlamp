@@ -1,47 +1,14 @@
 "use strict";
 function SearchService($http, $location) {
-    // our NPS API key
-  const key = "OP2F1MT0eeFGORzUkOdqULyY1Ed9dB9hdDiFIlD8";
   const self = this;
   self.state;
   self.gstate;
-  self.parkcode;
   //variable storing our promise
-  self.campresults = null;
   self.glampresults;
   self.glampSite = null;
   self.gsiteCoord = null;
   //variable storing our objects
-  self.siteCoord = null;
   //get method, called onclick in our search.html
-
-  self.campSite = null;
-  self.alertresults = null;
-
-
-  self.getCamp = () => {
-    return $http({
-      method: "GET",
-      url: `/camp`   
-    }).then(function(response) {
-      self.campresults = response.data;
-      console.log(self.campresults);
-      $location.path("/results");
-      return self.campresults;
-    });
-  };
-  self.setCamp = (site) => {
-    self.campSite = site;
-    console.log(self.campSite);
-    $location.path("/camp-details");
-    return self.campSite;
-  }
-  self.getCamp = () => {
-      return self.campSite;
-  }
-  self.getCData = () => {
-    return self.campresults;
-  };
   
   self.setGlamp = () => {
     return $http({
@@ -82,20 +49,5 @@ function SearchService($http, $location) {
   }
     return self.gsiteCoord;
 };
-  //this method is called in our results component, it takes the latlong string from each object in our
-  //promise. 
-  self.createCoord = () => {
-    self.siteCoord = [];
-    for (let i = 0; i < self.campresults.length; i++) {
-        self.Coord = {
-          lat: self.campresults[i].lat,
-          lng: self.campresults[i].lng
-        };
-        self.siteCoord.push(angular.copy(self.Coord));
-        console.log(self.siteCoord);
-      }
-      return self.siteCoord;
-    }
-};
-
+}
 angular.module("App").service("SearchService", SearchService);

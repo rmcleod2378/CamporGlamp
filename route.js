@@ -12,18 +12,10 @@ const pool = require("./connection");
 // }
 
 glamp.get("/glamp", (req, res) => {
-  pool.query("select * from glampsites").then(function(result) {
+  pool.query("select * from mergedsites").then(function(result) {
     res.send(result.rows);
   console.log("GET req made");
-  })
-  
-});
-glamp.get("/camp", (req, res) => {
-  pool.query("select * from campingsites").then(function(result) {
-    res.send(result.rows);
-  console.log("GET req made from camp");
-  })
-  
+  });
 });
 module.exports = glamp;
 

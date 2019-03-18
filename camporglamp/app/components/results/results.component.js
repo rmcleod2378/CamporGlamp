@@ -48,6 +48,7 @@ const results = {
         console.log(sites);
         SearchService.getGlamp(sites);
       };
+      vm.initMap();
     }
   ]
 };
