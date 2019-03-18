@@ -5,8 +5,6 @@ const campDetails = {
         const vm = this;
         vm.campSite = SearchService.getCamp();
         console.log(vm.campSite)
-        vm.alert = SearchService.getAlerts();
-        console.log(vm.alert)
         vm.campSearch = function (state) {
             //our service get method
             SearchService.get(state);
