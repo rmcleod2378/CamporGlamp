@@ -19,43 +19,29 @@ function SearchService($http, $location) {
   self.alertresults = null;
 
 
-  self.get = (state) => {
-    self.state = state;
+  self.get = () => {
     return $http({
       method: "GET",
-      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=
-      MI&limit=50&api_key=${key}`
+      url: `/camp`   
     }).then(function(response) {
-      self.campresults = response.data.data;
-      $location.path("/results");
+      self.campresults = response.data;
       console.log(self.campresults);
+      $location.path("/camp-results");
       return self.campresults;
     });
   };
-  //this is called in results component
-  self.getData = () => {
-    return self.campresults;
-  };
-
   self.setCamp = (site) => {
     self.campSite = site;
-    let parkCode = site.parkCode;
-    return $http({
-      method: "GET",
-      url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkCode}&api_key=${key}`
-    }).then(function(response) {
-      self.alertresults = response.data.data[0];
-      console.log(self.alertresults);
-      $location.path("/details");
-      return self.alertresults;
-    });
+    console.log(self.campSite);
+    $location.path("/camp-details");
+    return self.campSite;
   }
   self.getCamp = () => {
       return self.campSite;
   }
-  self.getAlerts = () => {
-    return self.alertresults;
-  }
+  self.getCData = () => {
+    return self.campresults;
+  };
   
   self.setGlamp = () => {
     return $http({
