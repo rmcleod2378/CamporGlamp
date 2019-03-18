@@ -19,44 +19,33 @@ function SearchService($http, $location) {
   self.alertresults = null;
 
 
-  self.get = (state) => {
-    self.state = state;
+  //this is called in results component
+  self.get = () => {
     return $http({
       method: "GET",
-      url: `https://api.nps.gov/api/v1/campgrounds?stateCode=
-      MI&limit=50&api_key=${key}`
+      url: `/camp`   
     }).then(function(response) {
-      self.campresults = response.data.data;
-      $location.path("/camp-results");
+      self.campresults = response.data;
       console.log(self.campresults);
+      $location.path("/camp-results");
       return self.campresults;
     });
   };
-  //this is called in results component
-  self.getData = () => {
-    return self.campresults;
-  };
-
   self.setCamp = (site) => {
     self.campSite = site;
-    let parkCode = site.parkCode;
-    return $http({
-      method: "GET",
-      url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkCode}&api_key=${key}`
-    }).then(function(response) {
-      self.alertresults = response.data.data[0];
-      console.log(self.alertresults);
-      $location.path("/camp-details");
-      return self.alertresults;
-    });
+    console.log(self.campSite);
+    $location.path("/camp-details");
+    return self.campSite;
   }
   self.getCamp = () => {
       return self.campSite;
   }
-  self.getAlerts = () => {
-    return self.alertresults;
-  }
-  
+  self.getCData = () => {
+    return self.campresults;
+  };
+
+
+
   self.setGlamp = () => {
     return $http({
       method: "GET",
@@ -97,33 +86,48 @@ function SearchService($http, $location) {
     return self.gsiteCoord;
 };
   //this method is called in our results component, it takes the latlong string from each object in our
-  //promise. 
+  //promise.
   self.createCoord = () => {
     self.siteCoord = [];
     for (let i = 0; i < self.campresults.length; i++) {
-      if (!self.campresults[i].latLong) {
-        continue;
-      }
-      self.latlong = self.campresults[i].latLong;
-      self.split = self.latlong.split(" ");
-      // console.log(self.split);
-      for (let j = 0; j < 1; j++) {
-        self.len1 = self.split[j].length;
-        self.len2 = self.split[j + 1].length;
-        self.str1 = self.split[j].substr(5, self.len1);
-        self.str2 = self.split[j + 1].substr(4, self.len2);
-        self.num1 = parseFloat(self.str1);
-        self.num2 = parseFloat(self.str2);
-        self.coordinates = {
-          lat: self.num1,
-          lng: self.num2
+        self.Coord = {
+          lat: self.campresults[i].lat,
+          lng: self.campresults[i].lng
         };
-        self.siteCoord.push(angular.copy(self.coordinates));
+        self.siteCoord.push(angular.copy(self.Coord));
+        console.log(self.siteCoord);
       }
+      return self.siteCoord;
     }
-    // console.log(self.siteCoord);
-    return self.siteCoord;
-  };
-}
+};
 
 angular.module("App").service("SearchService", SearchService);
+
+
+  // self.setCamp = (site) => {
+  //   self.campSite = site;
+  //   let parkCode = site.parkCode;
+  //   return $http({
+  //     method: "GET",
+  //     url:`https://api.nps.gov/api/v1/alerts?parkCode=${parkCode}&api_key=${key}`
+  //   }).then(function(response) {
+  //     self.alertresults = response.data.data[0];
+  //     console.log(self.alertresults);
+  //     $location.path("/camp-details");
+  //     return self.alertresults;
+  //   });
+  // }
+  
+  // self.get = (state) => {
+  //   self.state = state;
+  //   return $http({
+  //     method: "GET",
+  //     url: `https://api.nps.gov/api/v1/campgrounds?stateCode=
+  //     MI&limit=50&api_key=${key}`
+  //   }).then(function(response) {
+  //     self.campresults = response.data.data;
+  //     $location.path("/camp-results");
+  //     console.log(self.campresults);
+  //     return self.campresults;
+  //   });
+  // };
