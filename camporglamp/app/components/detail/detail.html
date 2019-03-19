@@ -1,9 +1,17 @@
-<section>
-    <p><h4>Campground Name:</h4> {{$ctrl.glampDetails.name}}</p>
-    <p><h4>Campground Description:</h4> {{$ctrl.glampDetails.description}}</p>
-    <img src="{{$ctrl.glampDetails.img2}}">
-    <button class="fave_btn" ng-click="$ctrl.fave(sites)">FAVE
-    <i ng-class="{faved:sites.bookmarked}" class="material-icons md-36">star_rate</i>
-  </button>
+
     <button ng-click="$ctrl.glampSearch()">Back To Results</button>
-  </section>
+    <div class="detail">
+  
+      <img src="{{$ctrl.glampDetails.img2}}">
+      <h3>{{$ctrl.glampDetails.name}}</h3>
+      <p>Description: {{$ctrl.glampDetails.description}}</p>
+      <a href="{{$ctrl.glampDetails.bookingurl}}" target="_blank">More Info</a>
+      <p>Activities:</p>
+    </div>
+    <div class="activityicons">
+      <i class="fas fa-fish"></i>
+      <i class="fas fa-hiking"></i>
+      <i class="fas fa-bicycle"></i>
+      <i class="fas fa-swimmer"></i>
+    </div>
+    </section>

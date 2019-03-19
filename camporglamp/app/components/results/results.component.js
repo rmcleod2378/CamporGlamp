@@ -5,8 +5,9 @@ const results = {
     "SearchService",
     function(SearchService) {
       const vm = this;
-      vm.glampresults = SearchService.getGData();
-      vm.gsiteCoord = SearchService.createGCoord();
+      vm.glampresults = SearchService.getGData(); 
+      console.log(vm.glampresults)
+      // vm.gsiteCoord = SearchService.createGCoord();
 
       const map = angular.element(document.querySelector("#map"));
       const results = angular.element(document.querySelector(".results"));
@@ -28,19 +29,15 @@ const results = {
       // draws map for glampsites
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
-          center: vm.gsiteCoord[0],
+          center: {lat: vm.glampresults[0].lat, lng: vm.glampresults[0].lng},
           zoom: 6
         });
-        for (let i = 0; i < vm.gsiteCoord.length; i++) {
-          if (vm.gsiteCoord[i].lat) {
-            console.log("Good Coords");
+        for (let i = 0; i < vm.glampresults.length; i++) {
             vm.marker = new google.maps.Marker({
-              position: vm.gsiteCoord[i],
+              position: {lat: vm.glampresults[i].lat, lng: vm.glampresults[i].lng},
               map: vm.map,
               title: vm.glampresults[i].name
             });
-          } else {
-          }
         }
       };
       //get glampsites' details
@@ -48,6 +45,14 @@ const results = {
         console.log(sites);
         SearchService.getGlamp(sites);
       };
+      vm.filterResults = function() {
+        vm.filterObj = {};
+        const checked = document.querySelectorAll("input:checked");
+        console.log(checked);
+        for (let el of checked) {
+        vm.filterObj[el.value] = true
+        }
+      }
       vm.initMap();
 
        //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
