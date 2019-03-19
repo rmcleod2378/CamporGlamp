@@ -1,0 +1,46 @@
+
+.imgmain {
+  height: 170px;
+  width: 170px;
+  background-color: grey;
+  display: block;
+  position: relative;
+  top: 14px;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Material Icon Button */
+.material-icons.md-36 { 
+  font-size: 36px; 
+  width: 36px;
+}
+
+.material-icons {
+  color:  rgb(27, 71, 34);
+}
+
+.material-icons:hover{
+  color:#ff0000;
+  transition: .5s all;
+}
+.faved {
+  color: #ff0000;
+}
+
+.favfilter {
+  background-color: white;
+  border: solid 3px #5f686b;
+  padding: 10px;
+  border-radius: 8px;
+  position: absolute;
+  left: 75%;
+  transform: translate(-50%);
+  top: 12%;
+}
+.favfilter p {
+  display: inline;
+}

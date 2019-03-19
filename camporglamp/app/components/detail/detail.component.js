@@ -9,6 +9,17 @@ const detail = {
             //our service get method
             SearchService.setGlamp();
         };
+         //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
+         vm.fave = (sites) => {
+            // if  (!sites.bookmarked)  {
+            //     sites.bookmarked = true;
+                SearchService.addFave(sites);
+            }
+            // else    {
+            //     sites.bookmarked = false;
+            //     SearchService.deleteTempFav(sites);
+            // }
+        // }
     }]
 }
 
