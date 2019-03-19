@@ -250,3 +250,28 @@ border-top: 1px solid #ccc;
 margin-left: 1%;
 color: black;
 }
+
+/* ################################# Contact Page ################################ */
+.contact_container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bio {
+  width: 90%;
+  height: 90%;
+  margin: 3%;
+  text-align: center;
+}
+
+.contact_img {
+  width: 90%;
+  height: 90%;
+}
+
+.contact_txt {
+  width: 90%;
+  height: 90%;
+  margin: 3%;
+}
