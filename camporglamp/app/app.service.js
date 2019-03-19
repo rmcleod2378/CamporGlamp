@@ -9,6 +9,7 @@ function SearchService($http, $location) {
   self.glampresults;
   self.glampSite = null;
   self.gsiteCoord = null;
+  self.faveSite;
   //variable storing our objects
   //get method, called onclick in our search.html
   self.setGlamp = () => {
@@ -53,9 +54,10 @@ function SearchService($http, $location) {
 
   //this checks to see if an item exists in our faveArray, prior to pushing it - pushes one of each item
   self.addFave = (sites) => {
-    self.glampSite = sites;
-    console.log("hi")
+    self.faveSite = sites;
+    // console.log(self.faveSite)
     self.faveArray.push(sites)
+    console.log(self.faveArray)
     $location.path("/favorite");
     
   //   for (let i = 0; i < self.faveArray.length; i++) {
