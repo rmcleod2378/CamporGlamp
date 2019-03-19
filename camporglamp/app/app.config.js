@@ -21,6 +21,9 @@ angular
       })
       .when("/favorite", {
         template: "<favorite></favorite>"
+      })
+      .when("/contact", {
+        template: "<contact></contact>"
       });
   }
 ]);

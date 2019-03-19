@@ -24,7 +24,7 @@
 
 <div ng-show="$ctrl.showFooter" class="footer_container">
   <footer id="footer">
-    <p class="footer_txt">Team Camp or Glamp</p>
+    <a class="footer_txt" ng-click="$ctrl.hide(); $ctrl.showFooter = false; $ctrl.footerBtn = false" href="#!/contact">Team Camp or Glamp</a>
     <p class="footer_txt">Data provided by the National Parks Service</p>
     <p class="footer_txt">Maps provided by Google</p>
   </footer>
