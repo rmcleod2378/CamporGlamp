@@ -3,18 +3,22 @@
       <h2> Listing Type </h2>
       <ul class="listingtype">
         <li>
-          <input id="glampingfilter" value="glamp" class="checkboxfilter" name="listingfilter" type="checkbox" ng-click="$ctrl.filterResults();">
-          <label for="glampingfilter" class="checkboxlabel">Glamping</label></li>
-        <li><input id="campingfilter" value="camp" class="checkboxfilter" name="listingfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label
-            for="campingfilter" class="checkboxlabel">Camping</label></li>
+          <input id="glampingfilter" value="glamp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();">
+          <label name="glampingfilter" class="checkboxlabel">Glamping</label></li>
+        <li>
+          <input id="campingfilter" value="camp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();">
+          <label name="campingfilter" class="checkboxlabel">Camping</label></li>
       </ul>
   </div>
     
   <div class="filter">
       <h2> Activities </h2>
       <ul class="activities">
-        <li><input id="bikingfilter" value="biking" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="bikingfilter"
-            class="checkboxlabel">Biking</label></li>
+        <li>
+          <input id="bikingfilter" value="biking" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();">
+          <label name="bikingfilter" class="checkboxlabel">Biking</label>
+        </li>
+        
         <li><input id="hikingfilter" value="hiking" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="hikingfilter"
             class="checkboxlabel">Hiking</label></li>
         <li><input id="fishingfilter" value="fishing" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="fishingfilter"

@@ -53,6 +53,8 @@ const results = {
       //filter results
       vm.filterResults = function() {
         vm.filterObj = {
+          glamp: undefined,
+          camp: undefined,
           biking: undefined,
           fishing: undefined,
           hiking: undefined,
@@ -75,54 +77,54 @@ const results = {
           setMapOnAll(null);
         }
 
-        function makeNewMakers() {
           let newMarkers = [...vm.glampresults];
+          //console
 
-
-          if (vm.filterObj.camping == true) {
-            for (let i = 0; i < newMarkers.length; i++){
-              if (newMarkers[i].camping == "FALSE"){
+          if (vm.filterObj.glamp == true) {
+            for (let i = newMarkers.length - 1; i >= 0; i--){
+              if (newMarkers[i].glamp == "FALSE"){
+                newMarkers = [...newMarkers.slice(0, i - 1), ...newMarkers.slice(i, - 1)]
+              }
+            }
+            console.log(newMarkers.length);
+          }
+          if (vm.filterObj.camp == true) {
+            for (let i = newMarkers.length - 1; i >= 0; i--){
+              if (newMarkers[i].camp == "FALSE"){
                 newMarkers.splice(i,1)
               }
             }
           } 
-          if (vm.filterObj.glamping == true) {
-            for (let i = 0; i < newMarkers.length; i++){
-              if (newMarkers[i].glamping == "FALSE"){
-                newMarkers.splice(i,1)
-              }
-            }
-          } 
+ 
           if (vm.filterObj.biking == true) {
-            for (let i = 0; i < newMarkers.length; i++){
+            for (let i = newMarkers.length - 1; i >= 0; i--){
               if (newMarkers[i].biking == "FALSE"){
                 newMarkers.splice(i,1)
               }
             }
           } 
           if (vm.filterObj.hiking == true) {
-            for (let i = 0; i < newMarkers.length; i++){
+            for (let i = newMarkers.length - 1; i >= 0; i--){
               if (newMarkers[i].hiking == "FALSE"){
                 newMarkers.splice(i,1)
               }
             }
           } 
           if (vm.filterObj.fishing == true) {
-            for (let i = 0; i < newMarkers.length; i++){
+            for (let i = newMarkers.length - 1; i >= 0; i--){
               if (newMarkers[i].fishing == "FALSE"){
                 newMarkers.splice(i,1)
               }
             }
           } 
           if (vm.filterObj.watersports == true) {
-            for (let i = 0; i < newMarkers.length; i++){
+            for (let i = newMarkers.length - 1; i >= 0; i--){
               if (newMarkers[i].watersports == "FALSE"){
                 newMarkers.splice(i,1)
               }
             }
           } 
-          console.log(newMarkers)
-          vm.filteredMarkers = function(){
+          console.log(newMarkers);
             for (let i = 0; i < newMarkers.length; i++) {
               vm.marker = new google.maps.Marker({
                 position: {lat: newMarkers[i].lat, lng: newMarkers[i].lng},
@@ -130,13 +132,11 @@ const results = {
                 title: newMarkers[i].name
               });
             }
-          }
-          vm.filteredMarkers();
-        }
+
+
 
         
       clearMarkers();
-      makeNewMakers();
       }
       vm.initMap();
       
