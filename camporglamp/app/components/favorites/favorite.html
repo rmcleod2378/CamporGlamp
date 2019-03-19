@@ -1,0 +1,17 @@
+<!-- Input for searching/filtering through favorited sites -->
+<div class="favfilter">
+  <p>Search your favorites here:</p>
+  <input type="text" placeholder="Type here" ng-model="siteName">
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorum illo ipsum nesciunt, voluptate enim aspernatur amet culpa dolore rem expedita velit fugit, numquam et? Molestiae inventore quod est ipsa!</p>
+<!-- details card within the favorites page -->
+<section class="container">
+  <div class="faveCard" ng-repeat="sites in $ctrl.faveArray | filter : siteName track by $index">
+    <p><h4>Campground Name:</h4> {{$ctrl.faveArray.name}}</p>
+    <p><h4>Campground Description:</h4> {{$ctrl.faveArray.description}}</p>    
+    <!-- <img class="imgmain" src="{{$ctrl.faveArray.img2}}"> -->
+      <button ng-click="$ctrl.delete(item)">
+         <i class="material-icons md-36">delete_forever</i>
+      </button>
+  </div>
+</section>

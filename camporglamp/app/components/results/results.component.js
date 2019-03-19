@@ -67,6 +67,18 @@ const results = {
         }
       }
       vm.initMap();
+
+       //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
+      //  vm.fave = (item) => {
+      //   if  (!item.bookmarked)  {
+      //       item.bookmarked = true;
+      //       SearchService.addFave(item);
+      //   }
+      //   else    {
+      //       item.bookmarked = false;
+      //       SearchService.deleteTempFav(item);
+      //   }
+      // }
     }
   ]
 };
