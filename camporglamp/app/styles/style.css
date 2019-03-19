@@ -15,14 +15,14 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.header a {
+a {
   color: #000;
   margin: 0 5px;
   padding: 5px;
   text-decoration: none;
 }
 
-.header a:hover {
+a:hover {
   color: #4daf7c;
 }
 
@@ -63,6 +63,7 @@ body {
   letter-spacing: 4px;
   color: #fff;
   text-shadow: 6px 6px 0 black;
+  cursor: pointer;
 }
 /* results */
 
