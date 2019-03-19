@@ -18,6 +18,9 @@ angular
       })
       .when("/secret", {
         template: "<secret></secret>"
+      })
+      .when("/favorite", {
+        template: "<favorite></favorite>"
       });
   }
 ]);
