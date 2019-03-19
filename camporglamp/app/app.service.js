@@ -9,6 +9,7 @@ function SearchService($http, $location) {
   self.glampresults;
   self.glampSite = null;
   self.gsiteCoord = null;
+  self.faveSite;
   //variable storing our objects
   //get method, called onclick in our search.html
   self.setGlamp = () => {
@@ -53,43 +54,37 @@ function SearchService($http, $location) {
 
   //this checks to see if an item exists in our faveArray, prior to pushing it - pushes one of each item
   self.addFave = (sites) => {
-    self.glampSite = sites;
-    console.log("hi")
-    self.faveArray.push(sites)
-    $location.path("/favorite");
-    
-  //   for (let i = 0; i < self.faveArray.length; i++) {
-  //     if (sites == self.faveArray[i]) {
-  //       return;
-  //     }
-  //   }
-  //   self.faveArray.push(sites)
-  }
+    console.log(sites) 
+    for (let i = 0; i < self.faveArray.length; i++) {
+      if (sites.id == self.faveArray[i].id) {
+        console.log("something")
+        return;
+      }        }
+    self.faveArray.push(sites);
+    $location.path("/favorite");      
+    }
+  
 
+     //returns fave array from delete method in favorite component
   self.getFave = (sites) => {
-    self.glampSite = sites;
+    self.faveSite = sites;
+    console.log("hi")
     // console.log(self.faveArray);
-    // $location.path("/favorite");
     return self.faveArray;
   }
-  //returns fave array
-  // self.getFave = () => {
-  //   console.log("hello")
-  //   $location.path("/favorite");
-  //   return self.faveArray;
-  // }
-  // //deletes an item from fave array
-  // self.deleteFave = (newArray) => {
-  //   self.faveArray = newArray;
-  // }
+ 
+  //deletes an item from fave array
+  self.deleteFave = (newArray) => {
+    self.faveArray = newArray;
+  }
   // //allows user to delete from array while navigating the initial search results by on/off click of favorite icon
-  // self.deleteTempFav = (item) => {
-  //   for (let i = 0; i < self.faveArray.length; i++) {
-  //     if (item == self.faveArray[i]) {
-  //       self.faveArray.splice(i, 1);
-  //     }
-  //   }
-  // }
+  self.deleteTempFav = (sites) => {
+    for (let i = 0; i < self.faveArray.length; i++) {
+      if (sites == self.faveArray[i]) {
+        self.faveArray.splice(i, 1);
+      }
+    }
+  }
 
 }
 angular.module("App").service("SearchService", SearchService);

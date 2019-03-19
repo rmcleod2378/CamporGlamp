@@ -1,16 +1,28 @@
 
+.faveCard {
+  height: 42%;
+  width: 42%;
+  margin: 2%;
+}
+
 .imgmain {
-  height: 170px;
-  width: 170px;
+  height: 175px;
+  width: 175px;
   background-color: grey;
-  display: block;
+  display: inline-block;
   position: relative;
   top: 14px;
   bottom: 8px;
-  left: 50%;
+  left: 15%;
   transform: translateX(-50%);
   border-radius: 8px;
   cursor: pointer;
+  margin: 0;
+}
+
+.delete {
+  margin-top: 25px;
+  margin-left: 20px;
 }
 
 /* Material Icon Button */
@@ -37,9 +49,9 @@
   padding: 10px;
   border-radius: 8px;
   position: absolute;
-  left: 75%;
+  left: 50%;
   transform: translate(-50%);
-  top: 12%;
+  top: 8%;
 }
 .favfilter p {
   display: inline;

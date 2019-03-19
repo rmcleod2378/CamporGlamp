@@ -139,6 +139,7 @@ const results = {
       makeNewMakers();
       }
       vm.initMap();
+      
        //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
       //  vm.fave = (item) => {
       //   if  (!item.bookmarked)  {
@@ -150,6 +151,7 @@ const results = {
       //       SearchService.deleteTempFav(item);
       //   }
       // }
+
     }
   ]
 };
