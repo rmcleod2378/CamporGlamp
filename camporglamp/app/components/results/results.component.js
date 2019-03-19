@@ -40,6 +40,19 @@ const results = {
             });
         }
       };
+      vm.initFilteredMap = function() {
+        vm.map = new google.maps.Map(document.getElementById("map"), {
+          center: {lat: vm.glampresults[0].lat, lng: vm.glampresults[0].lng},
+          zoom: 6
+        });
+        for (let i = 0; i < vm.glampresults.length; i++) {
+            vm.marker = new google.maps.Marker({
+              position: {lat: vm.glampresults[i].lat, lng: vm.glampresults[i].lng},
+              map: vm.map,
+              title: vm.glampresults[i].name
+            });
+        }
+      };
       //get glampsites' details
       vm.getDetails = function(sites) {
         console.log(sites);
