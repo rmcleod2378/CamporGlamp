@@ -3,9 +3,9 @@
       <h2> Listing Type </h2>
       <ul class="listingtype">
         <li>
-          <input id="glampingfilter" class="checkboxfilter" name="listingfilter" type="checkbox">
+          <input id="glampingfilter" value="glamp" class="checkboxfilter" name="listingfilter" type="checkbox" ng-click="$ctrl.filterResults();">
           <label for="glampingfilter" class="checkboxlabel">Glamping</label></li>
-        <li><input id="campingfilter" class="checkboxfilter" name="listingfilter" type="checkbox"><label
+        <li><input id="campingfilter" value="" class="checkboxfilter" name="listingfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label
             for="campingfilter" class="checkboxlabel">Camping</label></li>
       </ul>
   </div>
@@ -13,13 +13,13 @@
   <div class="filter">
       <h2> Activities </h2>
       <ul class="activities">
-        <li><input id="bikingfilter" class="checkboxfilter" type="checkbox"><label name="bikingfilter"
+        <li><input id="bikingfilter" value="biking" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="bikingfilter"
             class="checkboxlabel">Biking</label></li>
-        <li><input id="hikingfilter" class="checkboxfilter" type="checkbox"><label name="hikingfilter"
+        <li><input id="hikingfilter" value="hiking" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="hikingfilter"
             class="checkboxlabel">Hiking</label></li>
-        <li><input id="fishingfilter" class="checkboxfilter" type="checkbox"><label name="fishingfilter"
+        <li><input id="fishingfilter" value="fishing" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="fishingfilter"
             class="checkboxlabel">Fishing</label></li>
-        <li><input id="watersportsfilter" class="checkboxfilter" type="checkbox"><label name="watersportsfilter"
+        <li><input id="watersportsfilter" value="watersports" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();"><label name="watersportsfilter"
             class="checkboxlabel">Water Sports</label></li>
       </ul>
   </div>
@@ -29,7 +29,7 @@
   </section>
   
   <section class="results">
-    <div class="result" ng-repeat="sites in $ctrl.glampresults track by $index">
+    <div class="result" ng-repeat="sites in $ctrl.glampresults | filter: $ctrl.filterObj track by $index">
       <img
         src="{{sites.img1}}"
       />
