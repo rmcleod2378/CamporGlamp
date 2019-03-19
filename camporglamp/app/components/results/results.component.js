@@ -45,6 +45,14 @@ const results = {
         console.log(sites);
         SearchService.getGlamp(sites);
       };
+      vm.filterResults = function() {
+        vm.filterObj = {};
+        const checked = document.querySelectorAll("input:checked");
+        console.log(checked);
+        for (let el of checked) {
+        vm.filterObj[el.value] = true
+        }
+      }
       vm.initMap();
     }
   ]
