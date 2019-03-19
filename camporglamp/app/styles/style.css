@@ -129,17 +129,22 @@ a:hover {
 .blurb {
   font-weight: 300;
 }
-
-.result button, .filters button {
+button {
   margin: 0;
   border: none;
   padding: 10px;
   border-radius: 2px;
   align-self: center;
   background-color: #4daf7c;
+  color: #FFFFFF;
   text-transform: uppercase;
 }
-
+button a {
+  color: #FFFFFF;
+}
+button:hover {
+  background-color: #75f1b1;
+}
 #map {
   height: 100vh;
   width: 100%;
@@ -147,7 +152,7 @@ a:hover {
 }
 
 .fixedRight, .fixedLeft {
-  bottom: 10px;
+  bottom: 50px;
   padding: 10px;
   position: fixed;
   font-size: 30px;
