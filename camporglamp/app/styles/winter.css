@@ -1,9 +1,18 @@
-body {
+/* winter body {
   height: 100%;
-  margin: 0;
 }
  .winterintro {
   font-family: 'Cinzel Decorative', cursive;
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  color: red;
+  border-color: red;
+  background-color: #200d07;
+  margin: 0;
+  padding: 1%;
+  position: absolute;
+  width: 100%;
  }
 
 .winterhome {
@@ -21,10 +30,11 @@ body {
   url(../styles/Images/Iron-Throne-game-of-thrones-.jpg);
 }
 .wintercamp, .winterglamp {
+  top: 15%;
   width:100%;
   height: 50%;
   background-position: center;
-  background-color: #ffffff;
+  background-color: #050505;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -37,12 +47,69 @@ body {
   margin-top: 60px;
   margin-bottom: 10px;
   letter-spacing: 4px;
-  color: #fff;
-  text-shadow: 6px 6px 0 black;
   cursor: pointer;
 }
 
 .gotcamp {
   color: #0213f8;
-  text-
+  /* text-shadow: 2px 2px rgb(99, 206, 241); */
+  text-shadow: 0 1px #4bb7e9,
+  -1px 0 #cdd2d5,
+  -1px 2px #4bb7e9,
+  -2px 1px #cdd2d5,
+  -2px 3px #4bb7e9,
+  -3px 2px #cdd2d5,
+  -3px 4px #4bb7e9,
+  -4px 3px #cdd2d5,
+  -4px 5px #4bb7e9,
+  -5px 4px #cdd2d5,
+  -5px 6px #4bb7e9,
+  -6px 5px #cdd2d5,
+  -6px 7px #4bb7e9,
+  -7px 6px #cdd2d5,
+  -7px 8px #4bb7e9,
+  -8px 7px #cdd2d5;
 }
+
+.gotglamp {
+  color: #ff5100;
+  /* text-shadow: 2px 2px rgb(231, 127, 30); */
+  text-shadow: 0 0 20px #fefcc9,
+  10px -10px 30px #feec85,
+  -20px -20px 40px #ffae34,
+  20px -30px 35px #ec760c,
+  -20px -40px 40px #cd4606,
+  0 -50px 65px #973716,
+  10px -70px 70px #451b0e;
+}
+
+.winterdetails {
+  width: 90%;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.winterdetails span{
+  font-weight: bold;
+}
+
+.winter_btn {
+  color: blue;
+  background-color: black;
+  border: none;
+}
+
+.winter.btn:hover {
+  color: red;
+}
+
+.winter_img {
+  top: 50%;
+  width:100%;
+  height: 50%;
+  background-position: center;
+  background-color: #050505;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
