@@ -1,22 +1,14 @@
 "use strict";
 
-const express = require("express");  
-const glamp = express.Router();   
+const express = require("express");
+const glamp = express.Router();
 const pool = require("./connection");
 
-// function selectAll(req, res){
-//   pool.query("select * from glampsites").then(function(result) {
-//     console.log()
-//     res.send(result.rows);
-//   });
-// }
-
 glamp.get("/glamp", (req, res) => {
-  pool.query("select * from mergedsites").then(function(result) {
+  pool.query("select * from mergedsites").then(function (result) {
     res.send(result.rows);
-  console.log("GET req made");
+    console.log("GET req made");
   });
 });
-module.exports = glamp;
 
-// res.send(req.params.state);
+module.exports = glamp;
