@@ -100,4 +100,17 @@
   .footer_btn, .footer_clear {
     position: fixed;
   }
+  /* ############# GoT Easter Egg #################### */
+  .winterhome {
+    flex-direction: row;
+    overflow: hidden;
+  }
+  .wintercamp, .winterglamp {
+    width:50%;
+    height: calc(100vh - 50px);
+  }
+
+  .winterdetails {
+    width: 50%;
+  }
 }

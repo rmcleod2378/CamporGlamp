@@ -29,6 +29,7 @@ const results = {
       // draws map for glampsites
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
+
           center: { lat: 44.214265, lng: -86.010788},
           zoom: 6.75
         });
