@@ -25,6 +25,9 @@ body {
 a:hover {
   color: #4daf7c;
 }
+a {
+  text-decoration: none;
+}
 
 /* search */
 
