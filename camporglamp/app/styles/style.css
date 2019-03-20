@@ -343,9 +343,9 @@ button:hover {
 }
 
 .contact_txt {
-  width: 80%;
   height: 90%;
-  margin: 3%;
+  margin-left: auto;
+  margin-right: auto;
 }
 /* ################################# GoT Easter Egg ###################################### */
 .winterintro {
