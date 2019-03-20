@@ -9,10 +9,12 @@
   <button ng-click="$ctrl.glampSearch()">Back To Results</button>
 </section> -->
 <section class="detailsection">
-  <div>
-    <button ng-click="$ctrl.glampSearch()">Back To Results</button>
+  <div class="detailsbuttons">
+    <button ng-click="$ctrl.glampSearch()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
     <button class="fave_btn" ng-click="$ctrl.fave($ctrl.glampDetails)">
-      <i ng-class="{faved:sites.bookmarked}" class="material-icons md-36">star_rate</i>
+      <i class="fas fa-star"></i>
     </button>
   </div>
     <div class="detail">

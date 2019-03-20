@@ -1,6 +1,8 @@
 <section class="favoritesect">
   <!-- Input for searching/filtering through favorited sites -->
-  <button ng-click="$ctrl.glampSearch()">Back To Results</button>
+  <button ng-click="$ctrl.glampSearch()">
+      <i class="fas fa-chevron-left"></i>    
+  </button>
   <div class="favfilter">
     <p>Search your favorites here:</p>
     <input type="text" placeholder="Type here" ng-model="siteName">

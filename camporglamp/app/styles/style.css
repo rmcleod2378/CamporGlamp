@@ -29,7 +29,7 @@ a:hover {
 /* search */
 
 .search {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
 }
@@ -133,6 +133,7 @@ a:hover {
   width:100%;
 }
 button {
+  width: auto;
   margin: 10px 10px;
   border: none;
   padding: 10px;
@@ -203,7 +204,10 @@ button:hover {
   margin: 15px;
   align-self: flex-start;
 }
-
+.detailsbuttons {
+ display: flex;
+ justify-content: space-between;
+}
 .activityicons {
   width:100%;
   display:flex;

@@ -1,18 +1,24 @@
 <header class="header">
   <div class="leftnav">
-    <a href="#!/search">Search</a>
+    <a href="#!/search">
+      <i class="fas fa-campground"></i>
+    </a>
   </div>
   <div class="rightnav">
-    <a href="#!/results">Results</a>
-    <a href="#!/favorite">Favorites</a>
+    <a href="#!/results">
+      <i class="fas fa-list-ul"></i>
+    </a>
+    <a href="#!/favorite">
+      <i class="fas fa-star"></i>
+    </a>
   </div>
 </header>
 
 <ng-view></ng-view>
 
 <button ng-click="$ctrl.show()" ng-hide="$ctrl.publicBtn" class="footer_btn">
-  <p class="public"><i class="material-icons md-18">public</i></p>
-  <p class="contact">Contact Us, Terms, & more</p>
+  <p class="public"><i class="fas fa-globe-americas"></i>
+  <p class="contact">More</p>
 </button>
 
 <button
