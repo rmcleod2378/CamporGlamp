@@ -129,7 +129,10 @@ a:hover {
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 20px;
+  line-height: 1.2em;
+  max-height: 3.5em;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -249,7 +252,7 @@ button:hover {
   color: black;
   z-index: 200;
   padding: 10px;
-  margin: 10px 0 0 10px;
+  margin: 10px 0 0 0;
   cursor: pointer;
   display: inline-flex;
   text-align: center;
@@ -287,7 +290,7 @@ button:hover {
   flex-direction: row;
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
   bottom: 0;
   border-top: 1px solid #ccc;
 }

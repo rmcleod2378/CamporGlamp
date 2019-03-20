@@ -61,8 +61,18 @@
     display: none;
   }
   /* details */
+  .detail {
+    display:flex;
+  }
+  .detailsimage {
+    width:50%
+  }
+  .detailsinfo {
+    width:50%;
+    padding:50px;
+  }
   .detail img {
-    width: 50%;
+    width: 100%;
   }
   /* ############ Contact Page ############ */
   .contact_container {

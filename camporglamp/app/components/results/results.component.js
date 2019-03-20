@@ -5,6 +5,7 @@ const results = {
     "SearchService",
     function(SearchService) {
       const vm = this;
+
       vm.glampresults = SearchService.getGData();
       vm.markers = [];
 
@@ -28,8 +29,8 @@ const results = {
       // draws map for glampsites
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: vm.glampresults[0].lat, lng: vm.glampresults[0].lng },
-          zoom: 6
+          center: { lat: 44.214265, lng: -86.010788},
+          zoom: 6.75
         });
         for (let i = 0; i < vm.glampresults.length; i++) {
           vm.marker = new google.maps.Marker({
