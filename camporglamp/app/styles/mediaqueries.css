@@ -21,7 +21,7 @@
   }
   .camp, .glamp {
     width:50%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 50px);
   }
 
   .camp:hover, .glamp:hover {
@@ -46,7 +46,7 @@
   }
   .results {
     width: 48%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 50px);
     overflow-y: scroll;
   }
   .result {
@@ -54,11 +54,15 @@
   }
   #map {
     width: 40%;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 50px);
     display: flex;
   }
   .fixedRight, .fixedLeft {
     display: none;
+  }
+  /* details */
+  .detail img {
+    width: 50%;
   }
   /* ############ Contact Page ############ */
   .contact_container {
@@ -81,5 +85,9 @@
   .contact_txt {
     width: 90%;
     height: 90%;
+  }
+  /* footer */
+  .footer_btn, .footer_clear {
+    position: fixed;
   }
 }
