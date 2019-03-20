@@ -1,7 +1,4 @@
 @media only screen and (min-width: 768px) {
-  .camp:hover, .glamp:hover {
-    transition: none;
-  }
   /* results */
   .results {
     flex-direction: row;
@@ -17,16 +14,16 @@
   /* search */
   .search {
     flex-direction: row;
-    overflow: hidden;
   }
-  .camp, .glamp {
-    width:50%;
-    height: calc(100vh - 50px);
+  .searchinput {
+    padding-left:150px;
+    width:40%;
   }
-
-  .camp:hover, .glamp:hover {
-    transform: scale(1.1);
-    transition: ease-in-out .3s;
+  .searchinput h1 {
+    font-size: 3em;
+  }
+  .searchimage {
+    width:60%;
   }
   /* results  */
   results {
