@@ -29,7 +29,7 @@ const results = {
       vm.initMap = function() {
         vm.map = new google.maps.Map(document.getElementById("map"), {
           center: { lat: vm.glampresults[0].lat, lng: vm.glampresults[0].lng },
-          zoom: 6
+          zoom: 6.5
         });
         for (let i = 0; i < vm.glampresults.length; i++) {
           vm.marker = new google.maps.Marker({

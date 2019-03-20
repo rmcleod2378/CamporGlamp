@@ -110,7 +110,7 @@ function SearchService($http, $location) {
   };
 
   self.getWinterGlamp = () => {
-    console.log(self.winterglampresults)
+    // console.log(self.winterglampresults)
     return self.winterglampresults
   }
 
