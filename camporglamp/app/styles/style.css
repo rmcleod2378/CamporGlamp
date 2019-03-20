@@ -129,8 +129,11 @@ a:hover {
 .blurb {
   font-weight: 300;
 }
+.resultbutt {
+  width:100%;
+}
 button {
-  margin: 0;
+  margin: 10px 10px;
   border: none;
   padding: 10px;
   border-radius: 2px;
@@ -174,6 +177,10 @@ button:hover {
   display: none;
 }
 /* details  */
+.detailsection {
+  display: flex;
+  flex-direction: column;
+}
 .details {
   width: 100%;
   display: flex;
@@ -183,9 +190,14 @@ button:hover {
 }
 .detail {
   width: 95%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .detail img {
   width: 100%;
+}
+.detail span {
+  font-weight: 800;
 }
 .details button {
   margin: 15px;
@@ -218,7 +230,7 @@ button:hover {
   text-align: center;
 }
 .footer_btn:hover {
-  color: brown;
+  color: #FFFFFF;
 }
 .contact, .public {
 margin: 0;
