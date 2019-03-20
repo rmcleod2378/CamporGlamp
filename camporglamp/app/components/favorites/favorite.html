@@ -1,20 +1,24 @@
-<!-- Input for searching/filtering through favorited sites -->
-<button ng-click="$ctrl.glampSearch()">Back To Results</button>
-<div class="favfilter">
-  <p>Search your favorites here:</p>
-  <input type="text" placeholder="Type here" ng-model="siteName">
-</div>
-
-<!-- details card within the favorites page -->
-<section class="fave_container">
-  <div class="faveCard" ng-repeat="sites in $ctrl.faveArray | filter : siteName track by $index">
-    <p><h4>Campground Name:</h4> {{sites.name}}</p>
-    <p><h4>Campground Description:</h4> {{sites.description}}</p>    
-    <img class="imgmain" src="{{sites.img1}}" alt="no picture found">
-    <img class="imgmain" src="{{sites.img2}}" alt="no picture found">
-    <img class="imgmain" src="{{sites.img3}}" alt="no picture found">
-      <button class="delete" ng-click="$ctrl.delete(sites)">
-         <i class="material-icons md-36">delete_forever</i>
-      </button>
+<section class="favoritesect">
+  <!-- Input for searching/filtering through favorited sites -->
+  <button ng-click="$ctrl.glampSearch()">Back To Results</button>
+  <div class="favfilter">
+    <p>Search your favorites here:</p>
+    <input type="text" placeholder="Type here" ng-model="siteName">
   </div>
+
+  <!-- details card within the favorites page -->
+  <section class="fave_container">
+    <div class="faveCard" ng-repeat="sites in $ctrl.faveArray | filter : siteName track by $index">
+      <p><h4>Campground Name:</h4> {{sites.name}}</p>
+      <p><h4>Campground Description:</h4> {{sites.description}}</p>
+      <section class="imgwrapper">
+        <img class="imgmain" src="{{sites.img1}}" alt="no picture found">
+        <img class="imgmain" src="{{sites.img2}}" alt="no picture found">
+        <img class="imgmain" src="{{sites.img3}}" alt="no picture found">
+      </section> 
+        <button class="delete" ng-click="$ctrl.delete(sites)">
+          Delete<i class="material-icons md-36">delete_forever</i>
+        </button>
+    </div>
+  </section>
 </section>

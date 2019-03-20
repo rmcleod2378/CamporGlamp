@@ -8,24 +8,24 @@
 </button>
   <button ng-click="$ctrl.glampSearch()">Back To Results</button>
 </section> -->
-
+<section class="detailsection">
+  <div>
     <button ng-click="$ctrl.glampSearch()">Back To Results</button>
-    <button class="fave_btn" ng-click="$ctrl.fave($ctrl.glampDetails)">FAVE
+    <button class="fave_btn" ng-click="$ctrl.fave($ctrl.glampDetails)">
       <i ng-class="{faved:sites.bookmarked}" class="material-icons md-36">star_rate</i>
     </button>
-
+  </div>
     <div class="detail">
   
       <img src="{{$ctrl.glampDetails.img2}}">
       <h3>{{$ctrl.glampDetails.name}}</h3>
-      <p>Description: {{$ctrl.glampDetails.description}}</p>
-      <a href="{{$ctrl.glampDetails.bookingurl}}" target="_blank">More Info</a>
-      <p>Activities:</p>
+      <p><span>Description:</span> {{$ctrl.glampDetails.description}}</p>
+      <p><span>Activities:</span>
+        <i class="fas fa-fish"></i>
+        <i class="fas fa-hiking"></i>
+        <i class="fas fa-bicycle"></i>
+        <i class="fas fa-swimmer"></i>
+      </p>
+      <button><a href="{{$ctrl.glampDetails.bookingurl}}" target="_blank">More Info</a></button>
     </div>
-    <div class="activityicons">
-      <i class="fas fa-fish"></i>
-      <i class="fas fa-hiking"></i>
-      <i class="fas fa-bicycle"></i>
-      <i class="fas fa-swimmer"></i>
-    </div>
-    </section>
+</section>
