@@ -5,7 +5,7 @@ body {
  .winterintro {
   font-family: 'Cinzel Decorative', cursive;
  }
- 
+
 .winterhome {
   height: calc(100vh - 100px);
   display: flex;
@@ -40,4 +40,9 @@ body {
   color: #fff;
   text-shadow: 6px 6px 0 black;
   cursor: pointer;
+}
+
+.gotcamp {
+  color: #0213f8;
+  text-
 }
