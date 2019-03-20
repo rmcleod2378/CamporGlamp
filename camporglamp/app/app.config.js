@@ -24,6 +24,12 @@ angular
       })
       .when("/contact", {
         template: "<contact></contact>"
+      })
+      .when("/winter", {
+        template: "<winter></winter>"
+      })
+      .when("/winterdetails", {
+        template: "<winterdetails></winterdetails>"
       });
   }
 ]);

@@ -7,6 +7,8 @@ function SearchService($http, $location) {
   self.faveArray = []; //array where sites that are faved are pushed
   //variable storing our promise  
   self.glampresults;
+  self.wintercampresults;
+  self.winterglampresults;
   self.glampSite = null;
   self.gsiteCoord = null;
   self.faveSite;
@@ -68,8 +70,6 @@ function SearchService($http, $location) {
      //returns fave array from delete method in favorite component
   self.getFave = (sites) => {
     self.faveSite = sites;
-    console.log("hi")
-    // console.log(self.faveArray);
     return self.faveArray;
   }
  
@@ -85,6 +85,38 @@ function SearchService($http, $location) {
       }
     }
   }
+
+  self.setWinterCamp = () => {
+    return $http({
+      method: "GET",
+      url: `/wintercamp`
+    }).then(function (response) {
+      self.wintercampresults = response.data;
+      $location.path("/winterdetails");
+      return self.wintercampresults;
+    });
+  };
+
+  self.getWinterCamp = () => {
+    return self.wintercampresults
+  }
+
+  self.setWinterGlamp = () => {
+    return $http({
+      method: "GET",
+      url: `/winterglamp`
+    }).then(function (response) {
+      self.winterglampresults = response.data;
+      $location.path("/winterdetails");
+      return self.winterglampresults;
+    });
+  };
+
+  self.getWinterGlamp = () => {
+    console.log(self.winterglampresults)
+    return self.winterglampresults
+  }
+
 
 }
 angular.module("App").service("SearchService", SearchService);
