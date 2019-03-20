@@ -1,23 +1,23 @@
+<section class="winterdetailspage">
+  <section class="winterdetails" ng-repeat="camp in $ctrl.wintercampresults">  
+    <h3>Place: {{camp.name}}</h3>
+    <h4>Title: {{ camp.title }}</h4>
+    <p><span>Description:</span> {{camp.description}}</p>
+    <img class="imgmain" src="{{camp.img2}}" alt="photo not found">
+    <img class="imgmain" src="{{camp.img1}}" alt="photo not found">
+    <button class="winter_btn"><a href="{{camp.url}}" target="_blank">More Info</a></button>
+  </section>
 
-
-<section class="winterdetails" ng-repeat="camp in $ctrl.wintercampresults">  
-  <h3>Place: {{camp.name}}</h3>
-  <h4>Title: {{ camp.title }}</h4>
-  <p><span>Description:</span> {{camp.description}}</p>
-  <img class="imgmain" src="{{camp.img2}}" alt="photo not found">
-  <img class="imgmain" src="{{camp.img1}}" alt="photo not found">
-  <button class="winter_btn"><a href="{{camp.url}}" target="_blank">More Info</a></button>
+  <section class="winterdetails" ng-repeat="wcamp in $ctrl.winterglampresults">  
+    <h3>Place: {{wcamp.name}}</h3>
+    <h4>Title: {{ wcamp.title }}</h4>
+    <p><span>Description:</span> {{wcamp.description}}</p>
+    <img class="imgmain" src="{{wcamp.img2}}" alt="photo not found">
+    <img class="imgmain" src="{{wcamp.img1}}" alt="photo not found">
+    <button class="winter_btn"><a href="{{wcamp.url}}" target="_blank">More Info</a></button>
+  </section>
 </section>
 
-<section class="winterdetails" ng-repeat="wcamp in $ctrl.winterglampresults">  
-  <h3>Place: {{wcamp.name}}</h3>
-  <h4>Title: {{ wcamp.title }}</h4>
-  <p><span>Description:</span> {{wcamp.description}}</p>
-  <img class="imgmain" src="{{wcamp.img2}}" alt="photo not found">
-  <img class="imgmain" src="{{wcamp.img1}}" alt="photo not found">
-  <button class="winter_btn"><a href="{{wcamp.url}}" target="_blank">More Info</a></button>
-</section>
-
-<div>
-  <img class="winter_img" src="/app/styles/Images/122996.jpg" alt="">
-</div>
+<!-- <div>
+  <img class="winter_img" src="" alt="">
+</div> -->
