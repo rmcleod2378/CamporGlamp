@@ -53,7 +53,6 @@ function SearchService($http, $location) {
     }
     return self.gsiteCoord;
   };
-
   //this checks to see if an item exists in our faveArray, prior to pushing it - pushes one of each item
   self.addFave = (sites) => {
     console.log(sites) 
@@ -65,8 +64,6 @@ function SearchService($http, $location) {
     self.faveArray.push(sites);
     $location.path("/favorite");      
     }
-  
-
      //returns fave array from delete method in favorite component
   self.getFave = (sites) => {
     self.faveSite = sites;
@@ -77,7 +74,7 @@ function SearchService($http, $location) {
   self.deleteFave = (newArray) => {
     self.faveArray = newArray;
   }
-  // //allows user to delete from array while navigating the initial search results by on/off click of favorite icon
+//allows user to delete from array while navigating the initial search results by on/off click of favorite icon
   self.deleteTempFav = (sites) => {
     for (let i = 0; i < self.faveArray.length; i++) {
       if (sites == self.faveArray[i]) {
@@ -85,7 +82,7 @@ function SearchService($http, $location) {
       }
     }
   }
-
+// ############ GoT Easter Egg #################
   self.setWinterCamp = () => {
     return $http({
       method: "GET",
@@ -116,7 +113,6 @@ function SearchService($http, $location) {
     console.log(self.winterglampresults)
     return self.winterglampresults
   }
-
 
 }
 angular.module("App").service("SearchService", SearchService);
