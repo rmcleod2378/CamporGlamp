@@ -427,7 +427,7 @@ button:hover {
   0 -50px 65px #973716,
   10px -70px 70px #451b0e;
 }
-
+/* ############### GoT Details Page ####################### */
 .winterdetails {
   width: 80%;
   height: auto;
@@ -439,21 +439,28 @@ button:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+.winterheading {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.wintertitle {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .winterdetails span{
   font-weight: bold;
 }
 
-.winter_btn {
+ .winter_btn {
   color: blue;
   background-color: black;
   border: none;
-  width: 90%;
-}
-
-.winter.btn:hover {
-  color: red;
+  width: 95%;
 }
 
 .winterdetailspage {

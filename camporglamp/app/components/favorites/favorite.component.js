@@ -22,13 +22,7 @@ const favorite = {
       //our service get method
       SearchService.setGlamp();
     };
-
-    // vm.getFave = function(sites) {
-    //   console.log(sites);
-    //   SearchService.getFave(sites);
-    // };
   }]
 };
-
 
 angular.module("App").component("favorite", favorite);
