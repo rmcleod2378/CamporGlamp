@@ -8,6 +8,8 @@ const results = {
 
       vm.glampresults = SearchService.getGData();
       vm.markers = [];
+      vm.showGlamp = false;
+      vm.showCamp = false;
 
       const map = angular.element(document.querySelector("#map"));
       const results = angular.element(document.querySelector(".results"));
@@ -152,6 +154,14 @@ const results = {
         }
       };
       vm.initMap();
+
+      vm.showGlampFilter = () => {
+        vm.showCamp = !vm.showCamp;  
+      };
+      vm.showCampFilter = () => {
+        vm.showGlamp = !vm.showGlamp;
+      };
+
 
       //takes the given property bookmarked, and utilizes it for a styling state when an item exists in our fave array
       //  vm.fave = (item) => {

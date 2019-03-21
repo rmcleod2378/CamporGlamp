@@ -4,12 +4,12 @@
   <div class="filter">
       <h2> Listing Type </h2>
       <ul class="listingtype">
-        <li>
-          <input id="glampingfilter" value="glamp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();">
-          <label name="glampingfilter" class="checkboxlabel">Glamping</label></li>
-        <li>
-          <input id="campingfilter" value="camp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults();">
-          <label name="campingfilter" class="checkboxlabel">Camping</label></li>
+        <li ng-hide="$ctrl.showGlamp">
+          <input id="glampingfilter" value="glamp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults(); $ctrl.showGlampFilter();">
+          <label name="glampingfilter" class="checkboxlabel">GLAMP</label></li>
+        <li ng-hide="$ctrl.showCamp">
+          <input id="campingfilter" value="camp" class="checkboxfilter" type="checkbox" ng-click="$ctrl.filterResults(); $ctrl.showCampFilter();">
+          <label name="campingfilter" class="checkboxlabel">CAMP</label></li>
       </ul>
   </div>
     
