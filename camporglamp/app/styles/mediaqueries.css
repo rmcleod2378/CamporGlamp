@@ -13,7 +13,24 @@
     width: 60%;
   }
 }
-
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 823px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  .searchimage img {
+    display: none;
+  }
+}
+  @media only screen 
+  and (min-device-width: 769px) 
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+  .searchimage img {
+    width: 50%;
+    }
+  }
 @media only screen and (min-width: 1224px) {
   /* search */
   .search {
