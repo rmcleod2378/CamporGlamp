@@ -5,7 +5,7 @@ const winterdetails = {
     controller: ["SearchService", "$location", function(SearchService, $location) {
         const vm = this;
         vm.wintercampresults = SearchService.getWinterCamp();   
-        vm.winterglampresults = SearchService.getWinterGlamp();          
+        vm.winterglampresults = SearchService.getWinterGlamp();              
     }]
 };
 

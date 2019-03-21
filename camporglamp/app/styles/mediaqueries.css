@@ -8,6 +8,10 @@
   .result {
     width: 47.5%;
   }
+
+  .winterdetails {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1224px) {
