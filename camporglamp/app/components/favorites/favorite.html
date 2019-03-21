@@ -19,8 +19,11 @@
         <img class="imgmain" src="{{sites.img3}}" alt="no picture found">
       </section> 
         <button class="delete" ng-click="$ctrl.delete(sites)">
-          Delete<i class="material-icons md-36">delete_forever</i>
+          <i class="material-icons md-36">delete_forever</i>
         </button>
+        <button><a href="{{ $ctrl.glampDetails.bookingurl }}" target="_blank"
+          >More Info</a
+        ></button>
     </div>
   </section>
 </section>
