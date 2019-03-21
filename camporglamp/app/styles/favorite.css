@@ -17,12 +17,13 @@ favorite button {
 }
 .imgwrapper {
   display: flex;
-  flex-direction: row;
+  flex-flow: wrap;
   justify-content: space-evenly;
 }
 .imgmain {
   height: 175px;
   width: 175px;
+  margin-top: 3%;
   background-color: grey;
   display: inline-block;
   border-radius: 4px;
